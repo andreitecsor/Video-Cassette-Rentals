@@ -103,9 +103,39 @@ namespace InchirieriCaseteVideo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rsz_delete {
+            get {
+                object obj = ResourceManager.GetObject("rsz_delete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap rsz_edit {
             get {
                 object obj = ResourceManager.GetObject("rsz_edit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rsz_edit2 {
+            get {
+                object obj = ResourceManager.GetObject("rsz_edit2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rsz_edit3 {
+            get {
+                object obj = ResourceManager.GetObject("rsz_edit3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

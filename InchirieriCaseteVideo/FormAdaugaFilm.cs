@@ -13,6 +13,9 @@ namespace InchirieriCaseteVideo
 {
     public partial class FormAdaugaFilm : Form
     {
+        //Initializare lista de filme
+        List<Film> listaFilme = new List<Film>();
+
         public FormAdaugaFilm()
         {
             InitializeComponent();
@@ -60,29 +63,49 @@ namespace InchirieriCaseteVideo
             if (esteValid)
             {
                 Film filmNou = new Film(titlu, pret, an, gen, stoc);
-                MessageBox.Show("Filmul " + titlu + " a fost adaugat cu succes");
+                //Adaugare film nou in lista
+                listaFilme.Add(filmNou);
+                //Curatare list view
+                lvFilme.Items.Clear();
+                foreach(Film each in listaFilme)
+                {
+                    //Iterare lista obiecte si definire ListViewItem
+                    ListViewItem elementLV = new ListViewItem(new String[] {each.IdFilm.ToString(), each.Titlu, each.GenFilm.ToString(),
+                        each.AnAparitie.ToString(),each.PretPeZi.ToString(),each.Stoc.ToString()});
+                    //Inserare in listview
+                    lvFilme.Items.Add(elementLV);
+                }
+
+
+                //MessageBox.Show("Filmul " + titlu + " a fost adăugat cu succes","Introducere cu succes",
+                //    MessageBoxButtons.OK,MessageBoxIcon.Information);
+                CurataCampuri();
             }
             else
             {
-                MessageBox.Show("Revizuiti formularul!");
+                MessageBox.Show("Revizuiți formularul!","Eroare date formular",MessageBoxButtons.OKCancel,MessageBoxIcon.Error);
             }
         }
 
         private void btnCurataCampuri_Click(object sender, EventArgs e)
         {
-            CurataCampuri();
+            DialogResult dialogResult = MessageBox.Show("Doriți să curățați câmpurile?", "Verificare", MessageBoxButtons.YesNo,
+                 MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                CurataCampuri();
+            }
         }
 
 
         private void CurataCampuri()
         {
-            tbTitlu.Clear();
-            cbGenFilm.SelectedIndex = -1;
-            tbAnAparitie.Clear();
-            tbPret.Clear();
-            tbStoc.Clear();
+                tbTitlu.Clear();
+                cbGenFilm.SelectedIndex = -1;
+                tbAnAparitie.Clear();
+                tbPret.Clear();
+                tbStoc.Clear();
         }
-
         #region Error Providers: Validating & Validated
 
         //Titlu
@@ -91,7 +114,7 @@ namespace InchirieriCaseteVideo
             String titlu = tbTitlu.Text;
             if(String.IsNullOrEmpty(titlu) || String.IsNullOrWhiteSpace(titlu) || titlu.Length < 2)
             {
-                epTitlu.SetError((Control)sender, "Completeaza titlul filmului");
+                epTitlu.SetError((Control)sender, "Completează titlul filmului");
                 e.Cancel = true;
             }
         }
@@ -107,7 +130,7 @@ namespace InchirieriCaseteVideo
             String temp = cbGenFilm.Text;
             if(cbGenFilm.SelectedItem == null || Enum.TryParse(temp, out EnumGenFilm gen) == false)
             {
-                epGenFilm.SetError((Control)sender, "Alegeti un gen din lista");
+                epGenFilm.SetError((Control)sender, "Alegeți un gen din listă");
                 e.Cancel = true;
             }
         }
@@ -123,7 +146,7 @@ namespace InchirieriCaseteVideo
             int.TryParse(temp, out int an);
             if (an<1850 || an >2020)
             {
-                epAnAparitie.SetError((Control)sender, "Anul trebuie sa fie cuprins intre anii 1850 si 2020");
+                epAnAparitie.SetError((Control)sender, "Anul trebuie să fie un număr cuprins între anii 1850 și 2020");
                 e.Cancel = true;
             }
         }
@@ -139,7 +162,7 @@ namespace InchirieriCaseteVideo
             double.TryParse(temp, out double pret);
             if (pret<=0.0)
             {
-                epPret.SetError((Control)sender, "Pretul trebuie sa fie mai mare decat 0");
+                epPret.SetError((Control)sender, "Prețul trebuie să fie un număr mai mare decât 0");
                 e.Cancel = true;
             }
         }
@@ -155,7 +178,7 @@ namespace InchirieriCaseteVideo
             int.TryParse(temp, out int stoc);
             if (stoc <= 0)
             {
-                epStoc.SetError((Control)sender, "Stocul trebue sa fie mai mare decat 0");
+                epStoc.SetError((Control)sender, "Stocul trebuie să fie un număr mai mare decât 0");
                 e.Cancel = true;
             }
         }
