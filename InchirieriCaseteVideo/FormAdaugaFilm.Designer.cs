@@ -50,6 +50,7 @@
             this.epAnAparitie = new System.Windows.Forms.ErrorProvider(this.components);
             this.epPret = new System.Windows.Forms.ErrorProvider(this.components);
             this.epStoc = new System.Windows.Forms.ErrorProvider(this.components);
+            this.DetaliiButoane = new System.Windows.Forms.ToolTip(this.components);
             button2 = new System.Windows.Forms.Button();
             btnAdauga = new System.Windows.Forms.Button();
             btnCurataCampuri = new System.Windows.Forms.Button();
@@ -77,6 +78,7 @@
             button2.Name = "button2";
             button2.Size = new System.Drawing.Size(100, 82);
             button2.TabIndex = 12;
+            this.DetaliiButoane.SetToolTip(button2, "Intoarce-te la meniul anterior");
             button2.UseVisualStyleBackColor = false;
             // 
             // btnAdauga
@@ -95,6 +97,7 @@
             btnAdauga.Name = "btnAdauga";
             btnAdauga.Size = new System.Drawing.Size(154, 82);
             btnAdauga.TabIndex = 6;
+            this.DetaliiButoane.SetToolTip(btnAdauga, "Adauga film nou");
             btnAdauga.UseVisualStyleBackColor = false;
             btnAdauga.Click += new System.EventHandler(this.btnAdauga_Click);
             // 
@@ -114,6 +117,7 @@
             btnCurataCampuri.Name = "btnCurataCampuri";
             btnCurataCampuri.Size = new System.Drawing.Size(64, 72);
             btnCurataCampuri.TabIndex = 7;
+            this.DetaliiButoane.SetToolTip(btnCurataCampuri, "Curata campuri");
             btnCurataCampuri.UseVisualStyleBackColor = false;
             btnCurataCampuri.Click += new System.EventHandler(this.btnCurataCampuri_Click);
             // 
@@ -290,7 +294,10 @@
             this.ClientSize = new System.Drawing.Size(800, 413);
             this.Controls.Add(this.gpAdaugaFilm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FormAdaugaFilm";
+            this.RightToLeftLayout = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Filme";
             this.gpAdaugaFilm.ResumeLayout(false);
             this.gpAdaugaFilm.PerformLayout();
@@ -323,6 +330,7 @@
         private System.Windows.Forms.ErrorProvider epAnAparitie;
         private System.Windows.Forms.ErrorProvider epPret;
         private System.Windows.Forms.ErrorProvider epStoc;
+        private System.Windows.Forms.ToolTip DetaliiButoane;
     }
 }
 

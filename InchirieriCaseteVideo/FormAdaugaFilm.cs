@@ -22,32 +22,50 @@ namespace InchirieriCaseteVideo
 
         private void btnAdauga_Click(object sender, EventArgs e)
         {
-            bool esteValid;
+            bool esteValid = true;
 
-
+            #region Validari date formular pentru adaugare
+            //Titlu
             String titlu = tbTitlu.Text;
-
-            String temp=null;
+            if (String.IsNullOrEmpty(titlu) || String.IsNullOrWhiteSpace(titlu) || titlu.Length < 2)
+            {
+                esteValid = false;
+            }
+            //Pret
+            String temp = null;
             temp = tbPret.Text;
             Double.TryParse(temp, out double pret);
-
+            if (pret <= 0.0)
+                esteValid = false;
+            //An Aparitie
             temp = null;
             temp = tbAnAparitie.Text;
             int.TryParse(temp, out int an);
-
+            if (an < 1850 || an >2020)
+                esteValid = false;
+            //Gen Film
             temp = null;
             temp = cbGenFilm.Text;
             Enum.TryParse(temp, out EnumGenFilm gen);
-
-           
+            if (cbGenFilm.SelectedItem == null || Enum.TryParse(temp, out gen) == false)
+                esteValid = false;
+            //Stoc
             temp = null;
             temp = tbStoc.Text;
             int.TryParse(temp, out int stoc);
+            if (stoc <= 0)
+                esteValid = false;
+            #endregion
 
-            Film filmNou = new Film(titlu, pret, an, gen, stoc);
-
-            MessageBox.Show("Filmul " + titlu + " a fost adaugat cu succes");
-
+            if (esteValid)
+            {
+                Film filmNou = new Film(titlu, pret, an, gen, stoc);
+                MessageBox.Show("Filmul " + titlu + " a fost adaugat cu succes");
+            }
+            else
+            {
+                MessageBox.Show("Revizuiti formularul!");
+            }
         }
 
         private void btnCurataCampuri_Click(object sender, EventArgs e)
@@ -71,7 +89,7 @@ namespace InchirieriCaseteVideo
         private void tbTitlu_Validating(object sender, CancelEventArgs e)
         {
             String titlu = tbTitlu.Text;
-            if(String.IsNullOrEmpty(titlu) || String.IsNullOrWhiteSpace(titlu))
+            if(String.IsNullOrEmpty(titlu) || String.IsNullOrWhiteSpace(titlu) || titlu.Length < 2)
             {
                 epTitlu.SetError((Control)sender, "Completeaza titlul filmului");
                 e.Cancel = true;
@@ -103,7 +121,7 @@ namespace InchirieriCaseteVideo
         {
             String temp = tbAnAparitie.Text;
             int.TryParse(temp, out int an);
-            if(an<1850 || an > 2020)
+            if (an<1850 || an >2020)
             {
                 epAnAparitie.SetError((Control)sender, "Anul trebuie sa fie cuprins intre anii 1850 si 2020");
                 e.Cancel = true;
@@ -145,6 +163,7 @@ namespace InchirieriCaseteVideo
         {
             epStoc.Clear();
         }
+
         #endregion
 
     }

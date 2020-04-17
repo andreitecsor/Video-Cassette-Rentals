@@ -62,7 +62,7 @@ namespace InchirieriCaseteVideo.Models
                 _pretPeZi = pret;
             else
                 throw new Exception("Pret invalid");
-            if (an > 1850 && an < 2020)
+            if (an >= 1850 && an <= 2020)
                 _anAparitie = an;
             else
                 throw new Exception("An invalid");
