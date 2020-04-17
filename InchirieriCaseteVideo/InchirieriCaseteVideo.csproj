@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormAdaugaFilm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormAdaugaFilm.Designer.cs">
+      <DependentUpon>FormAdaugaFilm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\EnumGenFilm.cs" />
@@ -58,6 +58,9 @@
     <Compile Include="Models\Inchiriere.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAdaugaFilm.resx">
+      <DependentUpon>FormAdaugaFilm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -66,6 +69,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -79,6 +83,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_clean.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_add2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
