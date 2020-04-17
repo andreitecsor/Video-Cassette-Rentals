@@ -23,6 +23,7 @@ namespace InchirieriCaseteVideo
             cbGenFilm.SelectedIndex = -1;
         }
 
+        #region Butoane formular Filme
         private void btnAdauga_Click(object sender, EventArgs e)
         {
             bool esteValid = true;
@@ -65,17 +66,8 @@ namespace InchirieriCaseteVideo
                 Film filmNou = new Film(titlu, pret, an, gen, stoc);
                 //Adaugare film nou in lista
                 listaFilme.Add(filmNou);
-                //Curatare list view
-                lvFilme.Items.Clear();
-                foreach(Film each in listaFilme)
-                {
-                    //Iterare lista obiecte si definire ListViewItem
-                    ListViewItem elementLV = new ListViewItem(new String[] {each.IdFilm.ToString(), each.Titlu, each.GenFilm.ToString(),
-                        each.AnAparitie.ToString(),each.PretPeZi.ToString(),each.Stoc.ToString()});
-                    //Inserare in listview
-                    lvFilme.Items.Add(elementLV);
-                }
 
+                populeazaListView();
 
                 //MessageBox.Show("Filmul " + titlu + " a fost adăugat cu succes","Introducere cu succes",
                 //    MessageBoxButtons.OK,MessageBoxIcon.Information);
@@ -97,15 +89,31 @@ namespace InchirieriCaseteVideo
             }
         }
 
-
-        private void CurataCampuri()
+        private void btnStergeFilm_Click(object sender, EventArgs e)
         {
-                tbTitlu.Clear();
-                cbGenFilm.SelectedIndex = -1;
-                tbAnAparitie.Clear();
-                tbPret.Clear();
-                tbStoc.Clear();
+            if (lvFilme.SelectedItems.Count != 0)
+            {
+                if (MessageBox.Show("Doriți să ștergeți filmul?", "Șterge film", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    listaFilme.RemoveAt(lvFilme.SelectedIndices[0]);
+                    populeazaListView();
+                }
+            }
         }
+
+        private void btnModifica_Click(object sender, EventArgs e)
+        {
+            if (lvFilme.SelectedItems.Count != 0)
+            {
+                Film film = listaFilme.ElementAt(lvFilme.SelectedIndices[0]);
+                FormEditareFilm editare = new FormEditareFilm(film);
+                editare.ShowDialog();
+                populeazaListView();
+            }
+        }
+
+        #endregion
+
         #region Error Providers: Validating & Validated
 
         //Titlu
@@ -123,7 +131,6 @@ namespace InchirieriCaseteVideo
             epTitlu.Clear();
         }
 
-        
         //Gen Film
         private void cbGenFilm_Validating(object sender, CancelEventArgs e)
         {
@@ -189,5 +196,31 @@ namespace InchirieriCaseteVideo
 
         #endregion
 
+        #region Metode
+        private void CurataCampuri()
+        {
+            tbTitlu.Clear();
+            cbGenFilm.SelectedIndex = -1;
+            tbAnAparitie.Clear();
+            tbPret.Clear();
+            tbStoc.Clear();
+        }
+        private void populeazaListView()
+        {
+            //Curatare list view
+            lvFilme.Items.Clear();
+            foreach (Film each in listaFilme)
+            {
+                //Iterare lista obiecte si definire ListViewItem
+                ListViewItem elementLV = new ListViewItem(new String[] {each.IdFilm.ToString(), each.Titlu, each.GenFilm.ToString(),
+                        each.AnAparitie.ToString(),each.PretPeZi.ToString(),each.Stoc.ToString()});
+                //Inserare in listview
+                lvFilme.Items.Add(elementLV);
+            }
+        }
+
+        #endregion
+
+       
     }
 }

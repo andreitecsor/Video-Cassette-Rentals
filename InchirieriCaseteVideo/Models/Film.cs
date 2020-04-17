@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace InchirieriCaseteVideo.Models
 {
-    class Film: ICloneable, IComparable<Film>
+    public class Film: ICloneable, IComparable<Film>
     {
         #region Atribute si Proprietati Film
-        private int idFilm_PK = 0;
         public int IdFilm { get; set; }
 
         private string _titlu;
