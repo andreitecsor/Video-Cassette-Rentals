@@ -53,13 +53,24 @@ namespace InchirieriCaseteVideo.Models
 
         public Film(string titlu, double pret, int an, EnumGenFilm gen, int stoc)
         {
-            _titlu = titlu;
+            if (titlu != null)
+                _titlu = titlu;
+            else
+                throw new Exception("Titlul invalid");
+
             if(pret > 0 )
                 _pretPeZi = pret;
-            if (an > 1900 && an < 2020)
+            else
+                throw new Exception("Pret invalid");
+            if (an > 1850 && an < 2020)
                 _anAparitie = an;
+            else
+                throw new Exception("An invalid");
+
             if (stoc >= 0)
                 _stoc = stoc;
+            else
+                throw new Exception("Stoc invalid");
             GenFilm = gen;
             idFilm_PK++;
         }
