@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InchirieriCaseteVideo.Models
 {
-    class Client: ICloneable, IComparable<Client>
+    public class Client: ICloneable, IComparable<Client>
     {
         #region Atribute si Proprietati Client
         private int idClient_PK = 0;

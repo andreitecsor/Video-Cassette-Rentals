@@ -66,7 +66,7 @@
             btnFilme.Location = new System.Drawing.Point(6, 17);
             btnFilme.Name = "btnFilme";
             btnFilme.Size = new System.Drawing.Size(110, 80);
-            btnFilme.TabIndex = 12;
+            btnFilme.TabIndex = 2;
             btnFilme.UseVisualStyleBackColor = false;
             btnFilme.Click += new System.EventHandler(this.btnFilme_Click);
             // 
@@ -85,7 +85,7 @@
             btnClienti.Location = new System.Drawing.Point(6, 17);
             btnClienti.Name = "btnClienti";
             btnClienti.Size = new System.Drawing.Size(110, 80);
-            btnClienti.TabIndex = 11;
+            btnClienti.TabIndex = 1;
             btnClienti.UseVisualStyleBackColor = false;
             btnClienti.Click += new System.EventHandler(this.btnClienti_Click);
             // 
@@ -115,7 +115,7 @@
             this.versiuneToolStripMenuItem,
             this.autorToolStripMenuItem});
             this.detaliiToolStripMenuItem.Name = "detaliiToolStripMenuItem";
-            this.detaliiToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.detaliiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.detaliiToolStripMenuItem.Text = "Detalii";
             // 
             // versiuneToolStripMenuItem
@@ -135,7 +135,7 @@
             // ieșireToolStripMenuItem
             // 
             this.ieșireToolStripMenuItem.Name = "ieșireToolStripMenuItem";
-            this.ieșireToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.ieșireToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ieșireToolStripMenuItem.Text = "Ieșire";
             this.ieșireToolStripMenuItem.Click += new System.EventHandler(this.ieșireToolStripMenuItem_Click);
             // 

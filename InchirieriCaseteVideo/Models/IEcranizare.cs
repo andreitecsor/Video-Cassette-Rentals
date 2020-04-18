@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace InchirieriCaseteVideo.Models
 {
-    public enum EnumGenFilm
+    interface IEcranizare
     {
-        COMEDIE,
-        SF,
-        ACTIUNE,
-        FANTASTIC,
-        THRILLER,
-        POLITIST
+        void estePremiera();
     }
 }

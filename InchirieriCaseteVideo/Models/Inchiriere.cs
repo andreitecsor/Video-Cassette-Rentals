@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace InchirieriCaseteVideo.Models
 {
-    class Inchiriere
+    public class Inchiriere: Tranzactie
     {
+        public Film[] filmeInchiriate { get; set; }
     }
 }

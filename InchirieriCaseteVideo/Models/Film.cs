@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InchirieriCaseteVideo.Models
 {
-    public class Film: ICloneable, IComparable<Film>
+    public class Film: IEcranizare, ICloneable, IComparable<Film>
     {
         #region Atribute si Proprietati Film
         public int IdFilm { get; }
@@ -100,7 +100,12 @@ namespace InchirieriCaseteVideo.Models
             clone.Stoc = this.Stoc;
             return clone;
         }
+
         #endregion
 
+        public void estePremiera()
+        {
+            Console.Write(this.Titlu + "este in premieră!");
+        }
     }
 }

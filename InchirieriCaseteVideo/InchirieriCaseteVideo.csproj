@@ -68,7 +68,9 @@
     <Compile Include="Models\CustomExceptions\CustomExceptionStoc.cs" />
     <Compile Include="Models\EnumGenFilm.cs" />
     <Compile Include="Models\Film.cs" />
+    <Compile Include="Models\IEcranizare.cs" />
     <Compile Include="Models\Inchiriere.cs" />
+    <Compile Include="Models\Tranzactie.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdaugaFilm.resx">
