@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Button btnBack;
             System.Windows.Forms.Button btnModifica;
             System.Windows.Forms.Button btnCurataCampuri;
-            System.Windows.Forms.Button btnBack;
             this.gpAdaugaFilm = new System.Windows.Forms.GroupBox();
+            this.btnMinus = new System.Windows.Forms.Button();
+            this.btnPlus = new System.Windows.Forms.Button();
             this.lbValuta = new System.Windows.Forms.Label();
             this.tbStoc = new System.Windows.Forms.TextBox();
             this.tbPret = new System.Windows.Forms.TextBox();
@@ -44,13 +46,19 @@
             this.lbAnAparitie = new System.Windows.Forms.Label();
             this.lbGen = new System.Windows.Forms.Label();
             this.lbTitlu = new System.Windows.Forms.Label();
-            this.btnPlus = new System.Windows.Forms.Button();
-            this.btnMinus = new System.Windows.Forms.Button();
             this.DetaliiButoane = new System.Windows.Forms.ToolTip(this.components);
+            this.epTitlu = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epGenFilm = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epAnAparitie = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epPret = new System.Windows.Forms.ErrorProvider(this.components);
+            btnBack = new System.Windows.Forms.Button();
             btnModifica = new System.Windows.Forms.Button();
             btnCurataCampuri = new System.Windows.Forms.Button();
-            btnBack = new System.Windows.Forms.Button();
             this.gpAdaugaFilm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epTitlu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epGenFilm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epAnAparitie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epPret)).BeginInit();
             this.SuspendLayout();
             // 
             // gpAdaugaFilm
@@ -79,6 +87,26 @@
             this.gpAdaugaFilm.TabStop = false;
             this.gpAdaugaFilm.Text = "Modificare detalii film";
             // 
+            // btnMinus
+            // 
+            this.btnMinus.Location = new System.Drawing.Point(157, 262);
+            this.btnMinus.Name = "btnMinus";
+            this.btnMinus.Size = new System.Drawing.Size(39, 23);
+            this.btnMinus.TabIndex = 14;
+            this.btnMinus.Text = "-";
+            this.btnMinus.UseVisualStyleBackColor = true;
+            this.btnMinus.Click += new System.EventHandler(this.btnMinus_Click);
+            // 
+            // btnPlus
+            // 
+            this.btnPlus.Location = new System.Drawing.Point(112, 262);
+            this.btnPlus.Name = "btnPlus";
+            this.btnPlus.Size = new System.Drawing.Size(39, 23);
+            this.btnPlus.TabIndex = 13;
+            this.btnPlus.Text = "+";
+            this.btnPlus.UseVisualStyleBackColor = true;
+            this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
+            // 
             // lbValuta
             // 
             this.lbValuta.AutoSize = true;
@@ -102,6 +130,8 @@
             this.tbPret.Name = "tbPret";
             this.tbPret.Size = new System.Drawing.Size(130, 23);
             this.tbPret.TabIndex = 4;
+            this.tbPret.Validating += new System.ComponentModel.CancelEventHandler(this.tbPret_Validating);
+            this.tbPret.Validated += new System.EventHandler(this.tbPret_Validated);
             // 
             // cbGenFilm
             // 
@@ -112,6 +142,8 @@
             this.cbGenFilm.Name = "cbGenFilm";
             this.cbGenFilm.Size = new System.Drawing.Size(245, 24);
             this.cbGenFilm.TabIndex = 2;
+            this.cbGenFilm.Validating += new System.ComponentModel.CancelEventHandler(this.cbGenFilm_Validating);
+            this.cbGenFilm.Validated += new System.EventHandler(this.cbGenFilm_Validated);
             // 
             // tbAnAparitie
             // 
@@ -119,6 +151,8 @@
             this.tbAnAparitie.Name = "tbAnAparitie";
             this.tbAnAparitie.Size = new System.Drawing.Size(245, 23);
             this.tbAnAparitie.TabIndex = 3;
+            this.tbAnAparitie.Validating += new System.ComponentModel.CancelEventHandler(this.tbAnAparitie_Validating);
+            this.tbAnAparitie.Validated += new System.EventHandler(this.tbAnAparitie_Validated);
             // 
             // tbTitlu
             // 
@@ -127,6 +161,8 @@
             this.tbTitlu.Name = "tbTitlu";
             this.tbTitlu.Size = new System.Drawing.Size(245, 46);
             this.tbTitlu.TabIndex = 1;
+            this.tbTitlu.Validating += new System.ComponentModel.CancelEventHandler(this.tbTitlu_Validating);
+            this.tbTitlu.Validated += new System.EventHandler(this.tbTitlu_Validated);
             // 
             // lbStoc
             // 
@@ -178,6 +214,46 @@
             this.lbTitlu.TabIndex = 0;
             this.lbTitlu.Text = "Titlu";
             // 
+            // epTitlu
+            // 
+            this.epTitlu.ContainerControl = this;
+            this.epTitlu.RightToLeft = true;
+            // 
+            // epGenFilm
+            // 
+            this.epGenFilm.ContainerControl = this;
+            this.epGenFilm.RightToLeft = true;
+            // 
+            // epAnAparitie
+            // 
+            this.epAnAparitie.ContainerControl = this;
+            this.epAnAparitie.RightToLeft = true;
+            // 
+            // epPret
+            // 
+            this.epPret.ContainerControl = this;
+            this.epPret.RightToLeft = true;
+            // 
+            // btnBack
+            // 
+            btnBack.AccessibleDescription = "Curata formular";
+            btnBack.BackColor = System.Drawing.Color.Transparent;
+            btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnBack.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            btnBack.FlatAppearance.BorderSize = 2;
+            btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnBack.ForeColor = System.Drawing.Color.Black;
+            btnBack.Image = global::InchirieriCaseteVideo.Properties.Resources.rsz_back;
+            btnBack.Location = new System.Drawing.Point(21, 291);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new System.Drawing.Size(85, 71);
+            btnBack.TabIndex = 12;
+            this.DetaliiButoane.SetToolTip(btnBack, "Întoarce-te la meniul anterior");
+            btnBack.UseVisualStyleBackColor = false;
+            btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // btnModifica
             // 
             btnModifica.AccessibleDescription = "Curata formular";
@@ -200,63 +276,23 @@
             // 
             // btnCurataCampuri
             // 
-            btnCurataCampuri.AccessibleDescription = "Curata formular";
+            btnCurataCampuri.AccessibleDescription = "Reseteaza date formular";
             btnCurataCampuri.BackColor = System.Drawing.Color.Transparent;
             btnCurataCampuri.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnCurataCampuri.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            btnCurataCampuri.FlatAppearance.BorderColor = System.Drawing.Color.YellowGreen;
             btnCurataCampuri.FlatAppearance.BorderSize = 2;
             btnCurataCampuri.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             btnCurataCampuri.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             btnCurataCampuri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnCurataCampuri.ForeColor = System.Drawing.Color.LimeGreen;
-            btnCurataCampuri.Image = global::InchirieriCaseteVideo.Properties.Resources.rsz_clean;
+            btnCurataCampuri.Image = global::InchirieriCaseteVideo.Properties.Resources.rsz_undo;
             btnCurataCampuri.Location = new System.Drawing.Point(202, 213);
             btnCurataCampuri.Name = "btnCurataCampuri";
             btnCurataCampuri.Size = new System.Drawing.Size(64, 72);
             btnCurataCampuri.TabIndex = 7;
-            this.DetaliiButoane.SetToolTip(btnCurataCampuri, "Curăță câmpuri");
+            this.DetaliiButoane.SetToolTip(btnCurataCampuri, "Revino la datele inițiale");
             btnCurataCampuri.UseVisualStyleBackColor = false;
             btnCurataCampuri.Click += new System.EventHandler(this.btnCurataCampuri_Click);
-            // 
-            // btnBack
-            // 
-            btnBack.AccessibleDescription = "Curata formular";
-            btnBack.BackColor = System.Drawing.Color.Transparent;
-            btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnBack.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            btnBack.FlatAppearance.BorderSize = 2;
-            btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnBack.ForeColor = System.Drawing.Color.Black;
-            btnBack.Image = global::InchirieriCaseteVideo.Properties.Resources.rsz_back;
-            btnBack.Location = new System.Drawing.Point(21, 291);
-            btnBack.Name = "btnBack";
-            btnBack.Size = new System.Drawing.Size(85, 71);
-            btnBack.TabIndex = 12;
-            this.DetaliiButoane.SetToolTip(btnBack, "Întoarce-te la meniul anterior");
-            btnBack.UseVisualStyleBackColor = false;
-            btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // btnPlus
-            // 
-            this.btnPlus.Location = new System.Drawing.Point(112, 262);
-            this.btnPlus.Name = "btnPlus";
-            this.btnPlus.Size = new System.Drawing.Size(39, 23);
-            this.btnPlus.TabIndex = 13;
-            this.btnPlus.Text = "+";
-            this.btnPlus.UseVisualStyleBackColor = true;
-            this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
-            // 
-            // btnMinus
-            // 
-            this.btnMinus.Location = new System.Drawing.Point(157, 262);
-            this.btnMinus.Name = "btnMinus";
-            this.btnMinus.Size = new System.Drawing.Size(39, 23);
-            this.btnMinus.TabIndex = 14;
-            this.btnMinus.Text = "-";
-            this.btnMinus.UseVisualStyleBackColor = true;
-            this.btnMinus.Click += new System.EventHandler(this.btnMinus_Click);
             // 
             // FormEditareFilm
             // 
@@ -269,6 +305,10 @@
             this.Load += new System.EventHandler(this.FormEditareFilm_Load);
             this.gpAdaugaFilm.ResumeLayout(false);
             this.gpAdaugaFilm.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epTitlu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epGenFilm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epAnAparitie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epPret)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -290,5 +330,9 @@
         private System.Windows.Forms.Button btnMinus;
         private System.Windows.Forms.Button btnPlus;
         private System.Windows.Forms.ToolTip DetaliiButoane;
+        private System.Windows.Forms.ErrorProvider epTitlu;
+        private System.Windows.Forms.ErrorProvider epGenFilm;
+        private System.Windows.Forms.ErrorProvider epAnAparitie;
+        private System.Windows.Forms.ErrorProvider epPret;
     }
 }

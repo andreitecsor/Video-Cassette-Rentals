@@ -57,11 +57,11 @@
             this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Titlu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Gen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.An = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Pret = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Stoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lbListaFilme = new System.Windows.Forms.Label();
             this.gpEditareFilme = new System.Windows.Forms.GroupBox();
-            this.An = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             btnBack = new System.Windows.Forms.Button();
             btnModifica = new System.Windows.Forms.Button();
             btnStergeFilm = new System.Windows.Forms.Button();
@@ -374,6 +374,11 @@
             this.Gen.Text = "Gen";
             this.Gen.Width = 85;
             // 
+            // An
+            // 
+            this.An.Text = "An";
+            this.An.Width = 63;
+            // 
             // Pret
             // 
             this.Pret.Text = "Preț(RON)";
@@ -405,11 +410,6 @@
             this.gpEditareFilme.TabStop = false;
             this.gpEditareFilme.Text = "Editare film";
             // 
-            // An
-            // 
-            this.An.Text = "An";
-            this.An.Width = 63;
-            // 
             // FormAdaugaFilm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -420,7 +420,7 @@
             this.Controls.Add(this.lbListaFilme);
             this.Controls.Add(this.lvFilme);
             this.Controls.Add(this.gpAdaugaFilm);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "FormAdaugaFilm";
             this.RightToLeftLayout = true;

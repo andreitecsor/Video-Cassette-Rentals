@@ -9,33 +9,42 @@ namespace InchirieriCaseteVideo.Models
     public class Film: ICloneable, IComparable<Film>
     {
         #region Atribute si Proprietati Film
-        public int IdFilm { get; set; }
+        public int IdFilm { get; }
+        private static int contor = 1;
 
         private string _titlu;
         public string Titlu {
             get { return _titlu; }
-            set { _titlu = value; }
+            set{ _titlu = value; }
         }
 
         private double _pretPeZi;
         public double PretPeZi
         {
             get { return _pretPeZi; }
-            set { _pretPeZi = value; }
+            set{ _pretPeZi = value; }
         }
 
         private int _anAparitie;
         public int AnAparitie
         {
             get { return _anAparitie; }
-            set { _anAparitie = value; }
+            set{ _anAparitie = value;}
         }
 
         private int _stoc;
         public int Stoc
         {
             get { return _stoc; }
-            set { _stoc = value; }
+            set {  
+                    if (value < 0 || value % 1 != 0)
+                    {
+                        throw new CustomExceptionStoc();
+                    }
+                    else
+                    _stoc = value;
+                }
+            
         }
 
         public EnumGenFilm GenFilm { get; set; }
@@ -71,7 +80,7 @@ namespace InchirieriCaseteVideo.Models
             else
                 throw new Exception("Stoc invalid");
             GenFilm = gen;
-            IdFilm++;
+            IdFilm = contor++;
         }
         #endregion
 
@@ -88,6 +97,7 @@ namespace InchirieriCaseteVideo.Models
             clone.PretPeZi = this.PretPeZi;
             clone.AnAparitie = this.AnAparitie;
             clone.GenFilm = this.GenFilm;
+            clone.Stoc = this.Stoc;
             return clone;
         }
         #endregion

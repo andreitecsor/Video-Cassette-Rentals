@@ -125,6 +125,10 @@ namespace InchirieriCaseteVideo
                 epTitlu.SetError((Control)sender, "Completează titlul filmului");
                 e.Cancel = true;
             }
+            else
+            {
+                epTitlu.SetError((Control)sender, null);
+            }
         }
         private void tbTitlu_Validated(object sender, EventArgs e)
         {
@@ -139,6 +143,10 @@ namespace InchirieriCaseteVideo
             {
                 epGenFilm.SetError((Control)sender, "Alegeți un gen din listă");
                 e.Cancel = true;
+            }
+            else
+            {
+                epGenFilm.SetError((Control)sender, null);
             }
         }
         private void cbGenFilm_Validated(object sender, EventArgs e)
@@ -156,6 +164,10 @@ namespace InchirieriCaseteVideo
                 epAnAparitie.SetError((Control)sender, "Anul trebuie să fie un număr cuprins între anii 1850 și 2020");
                 e.Cancel = true;
             }
+            else
+            {
+                epAnAparitie.SetError((Control)sender, null);
+            }
         }
         private void tbAnAparitie_Validated(object sender, EventArgs e)
         {
@@ -166,11 +178,15 @@ namespace InchirieriCaseteVideo
         private void tbPret_Validating(object sender, CancelEventArgs e)
         {
             String temp = tbPret.Text;
-            double.TryParse(temp, out double pret);
-            if (pret<=0.0)
+            bool validare = double.TryParse(temp, out double pret);
+            if (validare == false || pret<=0.0)
             {
                 epPret.SetError((Control)sender, "Prețul trebuie să fie un număr mai mare decât 0");
                 e.Cancel = true;
+            }
+            else
+            {
+                epPret.SetError((Control)sender, null);
             }
         }
         private void tbPret_Validated(object sender, EventArgs e)
@@ -182,11 +198,15 @@ namespace InchirieriCaseteVideo
         private void tbStoc_Validating(object sender, CancelEventArgs e)
         {
             String temp = tbStoc.Text;
-            int.TryParse(temp, out int stoc);
-            if (stoc <= 0)
+            bool validare = int.TryParse(temp, out int stoc);
+            if (validare == false || stoc <= 0)
             {
-                epStoc.SetError((Control)sender, "Stocul trebuie să fie un număr mai mare decât 0");
+                epStoc.SetError((Control)sender,"Stocul trebuie să fie un număr mai mare decât 0");
                 e.Cancel = true;
+            }
+            else
+            {
+                epStoc.SetError((Control)sender, null);
             }
         }
         private void tbStoc_Validated(object sender, EventArgs e)

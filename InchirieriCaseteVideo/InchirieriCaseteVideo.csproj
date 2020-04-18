@@ -59,6 +59,7 @@
       <DependentUpon>FormAdaugaFilm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\CustomExceptions\CustomExceptionStoc.cs" />
     <Compile Include="Models\EnumGenFilm.cs" />
     <Compile Include="Models\Film.cs" />
     <Compile Include="Models\Inchiriere.cs" />
@@ -119,6 +120,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\rsz_edit3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_undo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
