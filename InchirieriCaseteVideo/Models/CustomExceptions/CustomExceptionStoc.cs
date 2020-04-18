@@ -8,7 +8,7 @@ namespace InchirieriCaseteVideo.Models
         public override string Message {
             get
             {
-                return "Stocul trebuie sa fie un numar mare mare sau egal cu 0!";
+                return "Stocul trebuie sa fie un numar mai mare sau egal cu 0!";
             }
         }
     }

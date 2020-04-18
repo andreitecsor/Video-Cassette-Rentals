@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace InchirieriCaseteVideo
 {
-    public partial class FormAdaugaFilm : Form
+    public partial class AdaugaFilm : Form
     {
         //Initializare lista de filme
         List<Film> listaFilme = new List<Film>();
 
-        public FormAdaugaFilm()
+        public AdaugaFilm()
         {
             InitializeComponent();
             cbGenFilm.DataSource = Enum.GetValues(typeof(EnumGenFilm));
@@ -106,10 +106,23 @@ namespace InchirieriCaseteVideo
             if (lvFilme.SelectedItems.Count != 0)
             {
                 Film film = listaFilme.ElementAt(lvFilme.SelectedIndices[0]);
-                FormEditareFilm editare = new FormEditareFilm(film);
+                EditareFilm editare = new EditareFilm(film);
                 editare.ShowDialog();
                 populeazaListView();
             }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Intro intro = new Intro();
+            this.Hide();
+            intro.ShowDialog();
+            this.Close();
+        }
+        
+        private void lvFilme_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            btnModifica_Click(sender, e);
         }
 
         #endregion
@@ -239,8 +252,48 @@ namespace InchirieriCaseteVideo
             }
         }
 
+
         #endregion
 
-       
+        #region MenuStrip
+        private void autorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Andrei Tecșor\nGrupa 1057\nSeria E");
+        }
+        private void versiuneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Versiunea: 1.0 \nUltima actualizare: 18/04/2020", "Versiune", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        private void ieșireToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+        #endregion
+
+        #region Context Menu Strip
+        private void modificăToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnModifica_Click(sender, e);
+        }
+
+        private void ștergeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnStergeFilm_Click(sender, e);
+        }
+
+        //Click dreapta list view
+        private void lvFilme_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                cmsListView.Show(Cursor.Position.X, Cursor.Position.Y);
+            }
+        }
+
+        #endregion
+
+
     }
 }

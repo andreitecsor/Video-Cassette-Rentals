@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace InchirieriCaseteVideo
 {
-    public partial class FormEditareFilm : Form
+    public partial class EditareFilm : Form
     {
         Film _instance;
         Film aux;
-        public FormEditareFilm(Film film)
+        public EditareFilm(Film film)
         {
             InitializeComponent();
             cbGenFilm.DataSource = Enum.GetValues(typeof(EnumGenFilm));

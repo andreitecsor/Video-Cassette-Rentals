@@ -46,17 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormEditareFilm.cs">
+    <Compile Include="EditareFilm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEditareFilm.Designer.cs">
-      <DependentUpon>FormEditareFilm.cs</DependentUpon>
+    <Compile Include="EditareFilm.Designer.cs">
+      <DependentUpon>EditareFilm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAdaugaFilm.cs">
+    <Compile Include="AdaugaFilm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAdaugaFilm.Designer.cs">
-      <DependentUpon>FormAdaugaFilm.cs</DependentUpon>
+    <Compile Include="AdaugaFilm.Designer.cs">
+      <DependentUpon>AdaugaFilm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Intro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Intro.Designer.cs">
+      <DependentUpon>Intro.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\CustomExceptions\CustomExceptionStoc.cs" />
@@ -65,11 +71,14 @@
     <Compile Include="Models\Inchiriere.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormAdaugaFilm.resx">
-      <DependentUpon>FormAdaugaFilm.cs</DependentUpon>
+    <EmbeddedResource Include="AdaugaFilm.resx">
+      <DependentUpon>AdaugaFilm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormEditareFilm.resx">
-      <DependentUpon>FormEditareFilm.cs</DependentUpon>
+    <EmbeddedResource Include="EditareFilm.resx">
+      <DependentUpon>EditareFilm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Intro.resx">
+      <DependentUpon>Intro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -123,6 +132,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\rsz_undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_robot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_1robot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_clienti.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_filme.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

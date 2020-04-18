@@ -63,6 +63,16 @@ namespace InchirieriCaseteVideo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rsz_1robot {
+            get {
+                object obj = ResourceManager.GetObject("rsz_1robot", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap rsz_add {
             get {
                 object obj = ResourceManager.GetObject("rsz_add", resourceCulture);
@@ -103,6 +113,16 @@ namespace InchirieriCaseteVideo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rsz_clienti {
+            get {
+                object obj = ResourceManager.GetObject("rsz_clienti", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap rsz_delete {
             get {
                 object obj = ResourceManager.GetObject("rsz_delete", resourceCulture);
@@ -136,6 +156,26 @@ namespace InchirieriCaseteVideo.Properties {
         internal static System.Drawing.Bitmap rsz_edit3 {
             get {
                 object obj = ResourceManager.GetObject("rsz_edit3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rsz_filme {
+            get {
+                object obj = ResourceManager.GetObject("rsz_filme", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rsz_robot {
+            get {
+                object obj = ResourceManager.GetObject("rsz_robot", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

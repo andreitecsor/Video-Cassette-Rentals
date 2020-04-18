@@ -7,5 +7,6 @@ C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW
 C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW\Proiect PAW\PAW-project\InchirieriCaseteVideo\obj\Debug\InchirieriCaseteVideo.csproj.CoreCompileInputs.cache
 C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW\Proiect PAW\PAW-project\InchirieriCaseteVideo\obj\Debug\InchirieriCaseteVideo.exe
 C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW\Proiect PAW\PAW-project\InchirieriCaseteVideo\obj\Debug\InchirieriCaseteVideo.pdb
-C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW\Proiect PAW\PAW-project\InchirieriCaseteVideo\obj\Debug\InchirieriCaseteVideo.FormAdaugaFilm.resources
-C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW\Proiect PAW\PAW-project\InchirieriCaseteVideo\obj\Debug\InchirieriCaseteVideo.FormEditareFilm.resources
+C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW\Proiect PAW\PAW-project\InchirieriCaseteVideo\obj\Debug\InchirieriCaseteVideo.AdaugaFilm.resources
+C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW\Proiect PAW\PAW-project\InchirieriCaseteVideo\obj\Debug\InchirieriCaseteVideo.EditareFilm.resources
+C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW\Proiect PAW\PAW-project\InchirieriCaseteVideo\obj\Debug\InchirieriCaseteVideo.Intro.resources
