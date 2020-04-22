@@ -41,15 +41,19 @@ namespace InchirieriCaseteVideo
             {
                 isValid = false;
             }
-            if (isValid == true && Enum.TryParse(cbGenFilm.Text, out EnumGenFilm gen) == false)
+            if (isValid == true && Enum.TryParse(cbGenFilm.Text, out EnumGenFilm gen_validare) == false)
                 isValid = false;
 
-            if (isValid == true && int.TryParse(tbAnAparitie.Text, out int an) == false)
+            if (isValid == true && int.TryParse(tbAnAparitie.Text, out int an_validare) == false)
                 isValid = false;
 
-            if (isValid == true && double.TryParse(tbPret.Text, out double pret) == false)
+            if (isValid == true && double.TryParse(tbPret.Text, out double pret_validare) == false)
                 isValid = false;
-            
+
+            if (isValid == true && int.TryParse(tbStoc.Text, out int stoc_validare) == false)
+                isValid = false;
+
+
             int.TryParse(tbStoc.Text, out int stoc);
             try
             {
