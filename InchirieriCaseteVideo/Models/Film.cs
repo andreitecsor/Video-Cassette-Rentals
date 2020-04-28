@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace InchirieriCaseteVideo.Models
 {
+    [Serializable]
     public class Film: IEcranizare, ICloneable, IComparable<Film>
     {
         #region Atribute si Proprietati Film
-        public int IdFilm { get; }
+        public int IdFilm { get; set; }
         private static int contor = 1;
 
         private string _titlu;
@@ -53,6 +54,7 @@ namespace InchirieriCaseteVideo.Models
         #region Constructori
         private Film()
         {
+            IdFilm = 0;
             _titlu = "Necompletat";
             _pretPeZi = 0.0;
             _anAparitie = 0;

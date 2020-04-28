@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace InchirieriCaseteVideo
 {
@@ -45,7 +48,7 @@ namespace InchirieriCaseteVideo
             temp = null;
             temp = tbAnAparitie.Text;
             int.TryParse(temp, out int an);
-            if (an < 1850 || an >2020)
+            if (an < 1850 || an > 2020)
                 esteValid = false;
             //Gen Film
             temp = null;
@@ -75,7 +78,7 @@ namespace InchirieriCaseteVideo
             }
             else
             {
-                MessageBox.Show("Revizuiți formularul!","Eroare date formular",MessageBoxButtons.OKCancel,MessageBoxIcon.Error);
+                MessageBox.Show("Revizuiți formularul!", "Eroare date formular", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
         }
 
@@ -119,7 +122,7 @@ namespace InchirieriCaseteVideo
             intro.ShowDialog();
             this.Close();
         }
-        
+
         private void lvFilme_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             btnModifica_Click(sender, e);
@@ -133,7 +136,7 @@ namespace InchirieriCaseteVideo
         private void tbTitlu_Validating(object sender, CancelEventArgs e)
         {
             String titlu = tbTitlu.Text;
-            if(String.IsNullOrEmpty(titlu) || String.IsNullOrWhiteSpace(titlu) || titlu.Length < 2)
+            if (String.IsNullOrEmpty(titlu) || String.IsNullOrWhiteSpace(titlu) || titlu.Length < 2)
             {
                 epTitlu.SetError((Control)sender, "Completează titlul filmului");
                 e.Cancel = true;
@@ -152,7 +155,7 @@ namespace InchirieriCaseteVideo
         private void cbGenFilm_Validating(object sender, CancelEventArgs e)
         {
             String temp = cbGenFilm.Text;
-            if(cbGenFilm.SelectedItem == null || Enum.TryParse(temp, out EnumGenFilm gen) == false)
+            if (cbGenFilm.SelectedItem == null || Enum.TryParse(temp, out EnumGenFilm gen) == false)
             {
                 epGenFilm.SetError((Control)sender, "Alegeți un gen din listă");
                 e.Cancel = true;
@@ -172,7 +175,7 @@ namespace InchirieriCaseteVideo
         {
             String temp = tbAnAparitie.Text;
             int.TryParse(temp, out int an);
-            if (an<1850 || an >2020)
+            if (an < 1850 || an > 2020)
             {
                 epAnAparitie.SetError((Control)sender, "Anul trebuie să fie un număr cuprins între anii 1850 și 2020");
                 e.Cancel = true;
@@ -192,7 +195,7 @@ namespace InchirieriCaseteVideo
         {
             String temp = tbPret.Text;
             bool validare = double.TryParse(temp, out double pret);
-            if (validare == false || pret<=0.0)
+            if (validare == false || pret <= 0.0)
             {
                 epPret.SetError((Control)sender, "Prețul trebuie să fie un număr mai mare decât 0");
                 e.Cancel = true;
@@ -214,7 +217,7 @@ namespace InchirieriCaseteVideo
             bool validare = int.TryParse(temp, out int stoc);
             if (validare == false || stoc <= 0)
             {
-                epStoc.SetError((Control)sender,"Stocul trebuie să fie un număr mai mare decât 0");
+                epStoc.SetError((Control)sender, "Stocul trebuie să fie un număr mai mare decât 0");
                 e.Cancel = true;
             }
             else
@@ -255,7 +258,7 @@ namespace InchirieriCaseteVideo
 
         #endregion
 
-        #region MenuStrip
+        #region MenuStrip 
         private void autorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Andrei Tecșor\nGrupa 1057\nSeria E");
@@ -292,8 +295,135 @@ namespace InchirieriCaseteVideo
             }
         }
 
+
+
         #endregion
 
 
+
+
+        //SERIALIZARE
+        //BINARY - SERIALIZARE
+        private void exportBinarTSMI_Click(object sender, EventArgs e)
+        {
+
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Title = "Salvează fișier binar";
+            sfd.Filter = "Binary files (*.dat)|*.dat|All files(*.*)|*.*";
+            sfd.FilterIndex = 1;
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                BinaryFormatter binaryFormatter = new BinaryFormatter();
+                FileStream stream = new FileStream(sfd.FileName, FileMode.Create);
+                binaryFormatter.Serialize(stream, listaFilme);
+                stream.Close();
+                MessageBox.Show("Fisierul "+ sfd.FileName+" a fost salvat cu succes");
+            }
+            
+        }
+        //XML - SERIALIZARE
+        private void exportXmlTSMI_Click(object sender, EventArgs e)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Film>));
+            FileStream fs = File.Create("listaFilme.xml");
+            serializer.Serialize(fs, listaFilme);
+            fs.Close();
+            MessageBox.Show("Fisierul listaFilme.xml a fost salvat cu succes");
+        }
+
+  
+        //DESERIALIZARE
+        //BINARY - DESERIALIZARE
+        private void importBinarTSMI_Click(object sender, EventArgs e)
+        {
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
+
+            OpenFileDialog ofd = new OpenFileDialog();
+
+            ofd.Title = "Selectează fișierul binar pentru deserializare";
+            ofd.Filter = "Text files (*.txt)|*.txt|Binary files (*.dat)|*.dat|All files(*.*)|*.*";
+            ofd.FilterIndex = 2;
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                FileStream fs = File.OpenRead(ofd.FileName);
+                listaFilme = binaryFormatter.Deserialize(fs) as List<Film>;//echivalent cu cast (List<Film>)
+                fs.Close();
+                populeazaListView();
+            }
+        }
+        
+        //XML - DESERIALIZARE
+        private void importXmlTSMI_Click(object sender, EventArgs e)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Film>));
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Selectează fișierul XML pentru deserializare";
+            ofd.Filter = "Text files (*.txt)|*.txt|XML Source File (*.xml)|*.dat|All files(*.*)|*.*";
+            ofd.FilterIndex = 3;
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                FileStream fs = File.OpenRead(ofd.FileName);
+                listaFilme = serializer.Deserialize(fs) as List<Film>;
+                fs.Close();
+                populeazaListView();
+            }
+        }
+
+        //FISIER TEXT 
+        //EXPORT
+        private void exportTextTSMI_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Title = "Salvează fișier text";
+            sfd.Filter = "Text files (*.txt)|*.txt|CSV files (*.csv)|*.csv|All files (*.*)|*.*";
+            sfd.FilterIndex = 2;
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter sw = new StreamWriter(sfd.FileName);
+                sw.Write("ID, Titlu, Gen, An aparitie, Pret, Stoc\n");
+                foreach (Film each in listaFilme)
+                {
+                    sw.Write(each.IdFilm + "," + each.Titlu + "," + each.GenFilm + "," + each.AnAparitie + "," 
+                        + each.PretPeZi + "," + each.Stoc + "\n");
+                }
+                sw.Close();
+            }
+        }
+
+        //IMPORT
+        private void importTextTSMI_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+
+            ofd.Title = "Deschide un fisier text";
+            ofd.Filter = "Text files (*.txt)|*.txt|CSV files (*.csv)|*.csv|All files (*.*)|*.*";
+            ofd.FilterIndex = 2;
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                StreamReader sr = new StreamReader(ofd.FileName);
+                string linie = sr.ReadLine();
+                listaFilme.Clear();
+
+                while ((linie = sr.ReadLine()) != null)
+                {
+                    String[] elemente = linie.Split(',');
+                    int.TryParse(elemente[0], out int id);
+                    String titlu = elemente[1];
+                    Enum.TryParse(elemente[2], out EnumGenFilm gen);
+                    int.TryParse(elemente[3], out int an);
+                    double.TryParse(elemente[4], out double pret);
+                    int.TryParse(elemente[5], out int stoc);
+                    Film filmNou = new Film(titlu, pret, an, gen, stoc);
+                    filmNou.IdFilm = id;
+                    listaFilme.Add(filmNou);
+                                                                         }
+                sr.Close();
+                populeazaListView();
+            }
+        }
     }
 }

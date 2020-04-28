@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace InchirieriCaseteVideo.Models
 {
+    [Serializable]
     public enum EnumGenFilm
     {
         COMEDIE,

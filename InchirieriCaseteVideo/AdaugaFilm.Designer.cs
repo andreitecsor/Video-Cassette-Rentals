@@ -62,12 +62,21 @@
             this.Stoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lbListaFilme = new System.Windows.Forms.Label();
             this.gpEditareFilme = new System.Windows.Forms.GroupBox();
-            this.menuStripIntro = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.detaliiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.MeniuTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.detaliiTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.versiuneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.autorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ieșireToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ieșireTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.fișierTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.importTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.importTextTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.importBinarTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.importXmlTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportTextTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportBinarTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportXmlTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsListView = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.modificăToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ștergeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,7 +92,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.epPret)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epStoc)).BeginInit();
             this.gpEditareFilme.SuspendLayout();
-            this.menuStripIntro.SuspendLayout();
+            this.menuStrip.SuspendLayout();
             this.cmsListView.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -424,34 +433,35 @@
             this.gpEditareFilme.TabStop = false;
             this.gpEditareFilme.Text = "Editare film";
             // 
-            // menuStripIntro
+            // menuStrip
             // 
-            this.menuStripIntro.BackColor = System.Drawing.Color.Transparent;
-            this.menuStripIntro.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-            this.menuStripIntro.Location = new System.Drawing.Point(0, 0);
-            this.menuStripIntro.Name = "menuStripIntro";
-            this.menuStripIntro.Size = new System.Drawing.Size(800, 24);
-            this.menuStripIntro.TabIndex = 14;
-            this.menuStripIntro.Text = "menuStrip1";
+            this.menuStrip.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MeniuTSMI,
+            this.fișierTSMI});
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip.TabIndex = 14;
+            this.menuStrip.Text = "MenuStrip";
             // 
-            // fileToolStripMenuItem
+            // MeniuTSMI
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.detaliiToolStripMenuItem,
-            this.ieșireToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.fileToolStripMenuItem.Text = "Meniu";
+            this.MeniuTSMI.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.detaliiTSMI,
+            this.ieșireTSMI});
+            this.MeniuTSMI.Name = "MeniuTSMI";
+            this.MeniuTSMI.Size = new System.Drawing.Size(53, 20);
+            this.MeniuTSMI.Text = "Meniu";
             // 
-            // detaliiToolStripMenuItem
+            // detaliiTSMI
             // 
-            this.detaliiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.detaliiTSMI.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.versiuneToolStripMenuItem,
             this.autorToolStripMenuItem});
-            this.detaliiToolStripMenuItem.Name = "detaliiToolStripMenuItem";
-            this.detaliiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.detaliiToolStripMenuItem.Text = "Detalii";
+            this.detaliiTSMI.Name = "detaliiTSMI";
+            this.detaliiTSMI.Size = new System.Drawing.Size(107, 22);
+            this.detaliiTSMI.Text = "Detalii";
             // 
             // versiuneToolStripMenuItem
             // 
@@ -467,12 +477,83 @@
             this.autorToolStripMenuItem.Text = "Autor";
             this.autorToolStripMenuItem.Click += new System.EventHandler(this.autorToolStripMenuItem_Click);
             // 
-            // ieșireToolStripMenuItem
+            // ieșireTSMI
             // 
-            this.ieșireToolStripMenuItem.Name = "ieșireToolStripMenuItem";
-            this.ieșireToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.ieșireToolStripMenuItem.Text = "Ieșire";
-            this.ieșireToolStripMenuItem.Click += new System.EventHandler(this.ieșireToolStripMenuItem_Click);
+            this.ieșireTSMI.Name = "ieșireTSMI";
+            this.ieșireTSMI.Size = new System.Drawing.Size(107, 22);
+            this.ieșireTSMI.Text = "Ieșire";
+            this.ieșireTSMI.Click += new System.EventHandler(this.ieșireToolStripMenuItem_Click);
+            // 
+            // fișierTSMI
+            // 
+            this.fișierTSMI.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.importTSMI,
+            this.exportTSMI});
+            this.fișierTSMI.Name = "fișierTSMI";
+            this.fișierTSMI.Size = new System.Drawing.Size(46, 20);
+            this.fișierTSMI.Text = "Fișier";
+            // 
+            // importTSMI
+            // 
+            this.importTSMI.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.importTextTSMI,
+            this.importBinarTSMI,
+            this.importXmlTSMI});
+            this.importTSMI.Name = "importTSMI";
+            this.importTSMI.Size = new System.Drawing.Size(180, 22);
+            this.importTSMI.Text = "Deschide";
+            // 
+            // importTextTSMI
+            // 
+            this.importTextTSMI.Name = "importTextTSMI";
+            this.importTextTSMI.Size = new System.Drawing.Size(180, 22);
+            this.importTextTSMI.Text = "Text";
+            this.importTextTSMI.Click += new System.EventHandler(this.importTextTSMI_Click);
+            // 
+            // importBinarTSMI
+            // 
+            this.importBinarTSMI.Name = "importBinarTSMI";
+            this.importBinarTSMI.Size = new System.Drawing.Size(180, 22);
+            this.importBinarTSMI.Text = "Binar";
+            this.importBinarTSMI.Click += new System.EventHandler(this.importBinarTSMI_Click);
+            // 
+            // importXmlTSMI
+            // 
+            this.importXmlTSMI.Name = "importXmlTSMI";
+            this.importXmlTSMI.Size = new System.Drawing.Size(180, 22);
+            this.importXmlTSMI.Text = "XML";
+            this.importXmlTSMI.Click += new System.EventHandler(this.importXmlTSMI_Click);
+            // 
+            // exportTSMI
+            // 
+            this.exportTSMI.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exportTextTSMI,
+            this.exportBinarTSMI,
+            this.exportXmlTSMI});
+            this.exportTSMI.Name = "exportTSMI";
+            this.exportTSMI.Size = new System.Drawing.Size(180, 22);
+            this.exportTSMI.Text = "Salvează ca";
+            // 
+            // exportTextTSMI
+            // 
+            this.exportTextTSMI.Name = "exportTextTSMI";
+            this.exportTextTSMI.Size = new System.Drawing.Size(101, 22);
+            this.exportTextTSMI.Text = "Text";
+            this.exportTextTSMI.Click += new System.EventHandler(this.exportTextTSMI_Click);
+            // 
+            // exportBinarTSMI
+            // 
+            this.exportBinarTSMI.Name = "exportBinarTSMI";
+            this.exportBinarTSMI.Size = new System.Drawing.Size(101, 22);
+            this.exportBinarTSMI.Text = "Binar";
+            this.exportBinarTSMI.Click += new System.EventHandler(this.exportBinarTSMI_Click);
+            // 
+            // exportXmlTSMI
+            // 
+            this.exportXmlTSMI.Name = "exportXmlTSMI";
+            this.exportXmlTSMI.Size = new System.Drawing.Size(101, 22);
+            this.exportXmlTSMI.Text = "XML";
+            this.exportXmlTSMI.Click += new System.EventHandler(this.exportXmlTSMI_Click);
             // 
             // cmsListView
             // 
@@ -485,14 +566,14 @@
             // modificăToolStripMenuItem
             // 
             this.modificăToolStripMenuItem.Name = "modificăToolStripMenuItem";
-            this.modificăToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modificăToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.modificăToolStripMenuItem.Text = "Modifică";
             this.modificăToolStripMenuItem.Click += new System.EventHandler(this.modificăToolStripMenuItem_Click);
             // 
             // ștergeToolStripMenuItem
             // 
             this.ștergeToolStripMenuItem.Name = "ștergeToolStripMenuItem";
-            this.ștergeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ștergeToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.ștergeToolStripMenuItem.Text = "Șterge";
             this.ștergeToolStripMenuItem.Click += new System.EventHandler(this.ștergeToolStripMenuItem_Click);
             // 
@@ -501,7 +582,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 434);
-            this.Controls.Add(this.menuStripIntro);
+            this.Controls.Add(this.menuStrip);
             this.Controls.Add(btnBack);
             this.Controls.Add(this.gpEditareFilme);
             this.Controls.Add(this.lbListaFilme);
@@ -521,8 +602,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.epPret)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epStoc)).EndInit();
             this.gpEditareFilme.ResumeLayout(false);
-            this.menuStripIntro.ResumeLayout(false);
-            this.menuStripIntro.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.cmsListView.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -559,15 +640,24 @@
         private System.Windows.Forms.ColumnHeader Pret;
         private System.Windows.Forms.ColumnHeader Stoc;
         private System.Windows.Forms.ColumnHeader An;
-        private System.Windows.Forms.MenuStrip menuStripIntro;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem detaliiToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip;
+        private System.Windows.Forms.ToolStripMenuItem MeniuTSMI;
+        private System.Windows.Forms.ToolStripMenuItem detaliiTSMI;
         private System.Windows.Forms.ToolStripMenuItem versiuneToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem autorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ieșireToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ieșireTSMI;
         private System.Windows.Forms.ContextMenuStrip cmsListView;
         private System.Windows.Forms.ToolStripMenuItem modificăToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ștergeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fișierTSMI;
+        private System.Windows.Forms.ToolStripMenuItem importTSMI;
+        private System.Windows.Forms.ToolStripMenuItem importTextTSMI;
+        private System.Windows.Forms.ToolStripMenuItem importBinarTSMI;
+        private System.Windows.Forms.ToolStripMenuItem importXmlTSMI;
+        private System.Windows.Forms.ToolStripMenuItem exportTSMI;
+        private System.Windows.Forms.ToolStripMenuItem exportTextTSMI;
+        private System.Windows.Forms.ToolStripMenuItem exportBinarTSMI;
+        private System.Windows.Forms.ToolStripMenuItem exportXmlTSMI;
     }
 }
 
