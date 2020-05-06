@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Button btnFilme;
             System.Windows.Forms.Button btnClienti;
             this.menuStripIntro = new System.Windows.Forms.MenuStrip();
@@ -42,6 +43,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbIntro2 = new System.Windows.Forms.Label();
+            this.DetaliiButoane = new System.Windows.Forms.ToolTip(this.components);
             btnFilme = new System.Windows.Forms.Button();
             btnClienti = new System.Windows.Forms.Button();
             this.menuStripIntro.SuspendLayout();
@@ -67,6 +69,7 @@
             btnFilme.Name = "btnFilme";
             btnFilme.Size = new System.Drawing.Size(110, 80);
             btnFilme.TabIndex = 2;
+            this.DetaliiButoane.SetToolTip(btnFilme, "Accesați meniul Filme");
             btnFilme.UseVisualStyleBackColor = false;
             btnFilme.Click += new System.EventHandler(this.btnFilme_Click);
             // 
@@ -86,6 +89,7 @@
             btnClienti.Name = "btnClienti";
             btnClienti.Size = new System.Drawing.Size(110, 80);
             btnClienti.TabIndex = 1;
+            this.DetaliiButoane.SetToolTip(btnClienti, "Accesați meniul Clienți");
             btnClienti.UseVisualStyleBackColor = false;
             btnClienti.Click += new System.EventHandler(this.btnClienti_Click);
             // 
@@ -115,7 +119,7 @@
             this.versiuneToolStripMenuItem,
             this.autorToolStripMenuItem});
             this.detaliiToolStripMenuItem.Name = "detaliiToolStripMenuItem";
-            this.detaliiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.detaliiToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.detaliiToolStripMenuItem.Text = "Detalii";
             // 
             // versiuneToolStripMenuItem
@@ -135,7 +139,7 @@
             // ieșireToolStripMenuItem
             // 
             this.ieșireToolStripMenuItem.Name = "ieșireToolStripMenuItem";
-            this.ieșireToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ieșireToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.ieșireToolStripMenuItem.Text = "Ieșire";
             this.ieșireToolStripMenuItem.Click += new System.EventHandler(this.ieșireToolStripMenuItem_Click);
             // 
@@ -197,6 +201,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            this.DetaliiButoane.SetToolTip(this.pictureBox1, "Pentru mai multe detalii accesați butonul Meniu");
             // 
             // lbIntro2
             // 
@@ -246,5 +251,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ToolTip DetaliiButoane;
     }
 }

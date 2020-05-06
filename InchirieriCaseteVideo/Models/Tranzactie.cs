@@ -8,7 +8,7 @@ namespace InchirieriCaseteVideo.Models
 {
     public abstract class Tranzactie
     {
-        public int Cod { get; set; }
+        public int CodTranzactie { get; set; }
         DateTime DataTranzactie { get; set; }
         public int IdClient { get; set; }
         public String NumeClient { get; set; }

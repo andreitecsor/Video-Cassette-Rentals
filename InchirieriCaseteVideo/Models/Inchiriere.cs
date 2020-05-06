@@ -9,5 +9,6 @@ namespace InchirieriCaseteVideo.Models
     public class Inchiriere: Tranzactie
     {
         public Film[] filmeInchiriate { get; set; }
+        public DateTime sfarsitPerioada { get; set; }
     }
 }

@@ -10,7 +10,7 @@ namespace InchirieriCaseteVideo.Models
     {
         #region Atribute si Proprietati Client
         private int idClient_PK = 0;
-        public int IdClient { get; }
+        public int IdClient { get; set; }
 
         private string _nume;
         public string Nume { get; set; }
@@ -23,6 +23,10 @@ namespace InchirieriCaseteVideo.Models
         public string Email { get; set; }
 
         public string Telefon { get; set; }
+
+        public int InchieriAnterioare { get; set; }
+
+        public int[] idFilme;
         #endregion
 
         #region Constructori
@@ -34,6 +38,8 @@ namespace InchirieriCaseteVideo.Models
             Email = email;
             Telefon = telefon;
             idClient_PK++;
+            InchieriAnterioare = 0;
+            idFilme = null;
         }
         #endregion
 
