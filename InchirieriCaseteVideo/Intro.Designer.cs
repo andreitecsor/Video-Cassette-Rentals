@@ -219,7 +219,7 @@
             this.ClientSize = new System.Drawing.Size(299, 235);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStripIntro);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStripIntro;
             this.MaximizeBox = false;
             this.Name = "Intro";

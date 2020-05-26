@@ -24,6 +24,7 @@ namespace InchirieriCaseteVideo
             InitializeComponent();
             cbGenFilm.DataSource = Enum.GetValues(typeof(EnumGenFilm));
             cbGenFilm.SelectedIndex = -1;
+            StatusLabel.Text = "Filme: 0";
         }
 
         #region Butoane formular Filme
@@ -232,7 +233,7 @@ namespace InchirieriCaseteVideo
 
         #endregion
 
-        #region Metode
+        #region Metode auxiliare (curata campuri si populeazaListView)
         private void CurataCampuri()
         {
             tbTitlu.Clear();
@@ -253,6 +254,7 @@ namespace InchirieriCaseteVideo
                 //Inserare in listview
                 lvFilme.Items.Add(elementLV);
             }
+            StatusLabel.Text = "Filme: " + listaFilme.Count;
         }
 
 
@@ -299,9 +301,22 @@ namespace InchirieriCaseteVideo
 
         #endregion
 
+        #region ALT SHORTCUTS
+        private void lvFilme_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Delete)
+            {
+                btnStergeFilm_Click(sender, e);
+            }
+            if(e.KeyCode == Keys.E && e.Control)
+            {
+                btnModifica_Click(sender, e);
+            }
+        }
 
+        #endregion
 
-
+        #region (DE)SERIALIZARE BINARY + XML
         //SERIALIZARE
         //BINARY - SERIALIZARE
         private void exportBinarTSMI_Click(object sender, EventArgs e)
@@ -371,6 +386,9 @@ namespace InchirieriCaseteVideo
             }
         }
 
+        #endregion
+
+        #region FISIER TEXT
         //FISIER TEXT 
         //EXPORT
         private void exportTextTSMI_Click(object sender, EventArgs e)
@@ -425,5 +443,9 @@ namespace InchirieriCaseteVideo
                 populeazaListView();
             }
         }
+
+        #endregion
+
+       
     }
 }

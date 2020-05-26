@@ -10,3 +10,4 @@ C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW
 C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW\Proiect PAW\PAW-project\InchirieriCaseteVideo\obj\Debug\InchirieriCaseteVideo.AdaugaFilm.resources
 C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW\Proiect PAW\PAW-project\InchirieriCaseteVideo\obj\Debug\InchirieriCaseteVideo.EditareFilm.resources
 C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW\Proiect PAW\PAW-project\InchirieriCaseteVideo\obj\Debug\InchirieriCaseteVideo.Intro.resources
+C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW\Proiect PAW\PAW-project\InchirieriCaseteVideo\obj\Debug\InchirieriCaseteVideo.Clienti.resources

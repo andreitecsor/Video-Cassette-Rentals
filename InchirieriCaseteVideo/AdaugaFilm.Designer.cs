@@ -80,6 +80,8 @@
             this.cmsListView = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.modificăToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ștergeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             btnBack = new System.Windows.Forms.Button();
             btnModifica = new System.Windows.Forms.Button();
             btnStergeFilm = new System.Windows.Forms.Button();
@@ -94,6 +96,7 @@
             this.gpEditareFilme.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.cmsListView.SuspendLayout();
+            this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnBack
@@ -379,6 +382,7 @@
             this.lvFilme.TabIndex = 8;
             this.lvFilme.UseCompatibleStateImageBehavior = false;
             this.lvFilme.View = System.Windows.Forms.View.Details;
+            this.lvFilme.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lvFilme_KeyDown);
             this.lvFilme.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lvFilme_MouseClick);
             this.lvFilme.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvFilme_MouseDoubleClick);
             // 
@@ -500,27 +504,27 @@
             this.importBinarTSMI,
             this.importXmlTSMI});
             this.importTSMI.Name = "importTSMI";
-            this.importTSMI.Size = new System.Drawing.Size(180, 22);
+            this.importTSMI.Size = new System.Drawing.Size(133, 22);
             this.importTSMI.Text = "Deschide";
             // 
             // importTextTSMI
             // 
             this.importTextTSMI.Name = "importTextTSMI";
-            this.importTextTSMI.Size = new System.Drawing.Size(180, 22);
+            this.importTextTSMI.Size = new System.Drawing.Size(101, 22);
             this.importTextTSMI.Text = "Text";
             this.importTextTSMI.Click += new System.EventHandler(this.importTextTSMI_Click);
             // 
             // importBinarTSMI
             // 
             this.importBinarTSMI.Name = "importBinarTSMI";
-            this.importBinarTSMI.Size = new System.Drawing.Size(180, 22);
+            this.importBinarTSMI.Size = new System.Drawing.Size(101, 22);
             this.importBinarTSMI.Text = "Binar";
             this.importBinarTSMI.Click += new System.EventHandler(this.importBinarTSMI_Click);
             // 
             // importXmlTSMI
             // 
             this.importXmlTSMI.Name = "importXmlTSMI";
-            this.importXmlTSMI.Size = new System.Drawing.Size(180, 22);
+            this.importXmlTSMI.Size = new System.Drawing.Size(101, 22);
             this.importXmlTSMI.Text = "XML";
             this.importXmlTSMI.Click += new System.EventHandler(this.importXmlTSMI_Click);
             // 
@@ -531,7 +535,7 @@
             this.exportBinarTSMI,
             this.exportXmlTSMI});
             this.exportTSMI.Name = "exportTSMI";
-            this.exportTSMI.Size = new System.Drawing.Size(180, 22);
+            this.exportTSMI.Size = new System.Drawing.Size(133, 22);
             this.exportTSMI.Text = "Salvează ca";
             // 
             // exportTextTSMI
@@ -577,11 +581,28 @@
             this.ștergeToolStripMenuItem.Text = "Șterge";
             this.ștergeToolStripMenuItem.Click += new System.EventHandler(this.ștergeToolStripMenuItem_Click);
             // 
+            // statusStrip
+            // 
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StatusLabel});
+            this.statusStrip.Location = new System.Drawing.Point(0, 432);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(800, 22);
+            this.statusStrip.TabIndex = 15;
+            this.statusStrip.Text = "statusStrip1";
+            // 
+            // StatusLabel
+            // 
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(108, 17);
+            this.StatusLabel.Text = "Detalii numar filme";
+            // 
             // AdaugaFilm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 434);
+            this.ClientSize = new System.Drawing.Size(800, 454);
+            this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.Controls.Add(btnBack);
             this.Controls.Add(this.gpEditareFilme);
@@ -605,6 +626,8 @@
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.cmsListView.ResumeLayout(false);
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -658,6 +681,8 @@
         private System.Windows.Forms.ToolStripMenuItem exportTextTSMI;
         private System.Windows.Forms.ToolStripMenuItem exportBinarTSMI;
         private System.Windows.Forms.ToolStripMenuItem exportXmlTSMI;
+        private System.Windows.Forms.StatusStrip statusStrip;
+        private System.Windows.Forms.ToolStripStatusLabel StatusLabel;
     }
 }
 

@@ -9,7 +9,8 @@ namespace InchirieriCaseteVideo.Models
     public class Client: ICloneable, IComparable<Client>
     {
         #region Atribute si Proprietati Client
-        private int idClient_PK = 0;
+        private int idClient;
+        private static int contorClient = 0;
         public int IdClient { get; set; }
 
         private string _nume;
@@ -26,7 +27,6 @@ namespace InchirieriCaseteVideo.Models
 
         public int InchieriAnterioare { get; set; }
 
-        public int[] idFilme;
         #endregion
 
         #region Constructori
@@ -37,9 +37,7 @@ namespace InchirieriCaseteVideo.Models
             DataNastere = dataNastere;
             Email = email;
             Telefon = telefon;
-            idClient_PK++;
-            InchieriAnterioare = 0;
-            idFilme = null;
+            idClient = ++contorClient;
         }
         #endregion
 

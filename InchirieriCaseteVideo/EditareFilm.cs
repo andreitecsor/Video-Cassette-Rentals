@@ -134,6 +134,7 @@ namespace InchirieriCaseteVideo
         }
 
         #endregion
+
         #region Error Providers: Validating & Validated
 
         //Titlu

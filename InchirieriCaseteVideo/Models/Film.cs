@@ -11,7 +11,7 @@ namespace InchirieriCaseteVideo.Models
     {
         #region Atribute si Proprietati Film
         public int IdFilm { get; set; }
-        private static int contor = 1;
+        private static int contorFilm = 1;
 
         private string _titlu;
         public string Titlu {
@@ -82,7 +82,7 @@ namespace InchirieriCaseteVideo.Models
             else
                 throw new Exception("Stoc invalid");
             GenFilm = gen;
-            IdFilm = contor++;
+            IdFilm = contorFilm++;
         }
         #endregion
 
