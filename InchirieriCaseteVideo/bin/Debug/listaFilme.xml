@@ -24,4 +24,12 @@
     <Stoc>15</Stoc>
     <GenFilm>POLITIST</GenFilm>
   </Film>
+  <Film>
+    <IdFilm>4</IdFilm>
+    <Titlu>American Pie</Titlu>
+    <PretPeZi>3.39</PretPeZi>
+    <AnAparitie>2002</AnAparitie>
+    <Stoc>4</Stoc>
+    <GenFilm>COMEDIE</GenFilm>
+  </Film>
 </ArrayOfFilm>

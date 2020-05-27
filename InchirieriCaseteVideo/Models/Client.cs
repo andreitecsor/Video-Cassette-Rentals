@@ -1,22 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace InchirieriCaseteVideo.Models
 {
-    public class Client: ICloneable, IComparable<Client>
+    [Serializable]
+    public class Client//: IComparable<Client>
     {
         #region Atribute si Proprietati Client
-        private int idClient;
-        private static int contorClient = 0;
-        public int IdClient { get; set; }
+        [Key]
+        public int IdClient { get; set; } // primary key
 
-        private string _nume;
         public string Nume { get; set; }
 
-        private string _prenume;
         public string Prenume { get; set; }
 
         public DateTime DataNastere { get; set; }
@@ -25,33 +24,33 @@ namespace InchirieriCaseteVideo.Models
 
         public string Telefon { get; set; }
 
-        public int InchieriAnterioare { get; set; }
+        //public List<Film> filmeInchiriate;
 
         #endregion
 
-        #region Constructori
-        public Client(string nume, string prenume, DateTime dataNastere, string email, string telefon)
-        {
-            _nume = nume;
-            _prenume = prenume;
-            DataNastere = dataNastere;
-            Email = email;
-            Telefon = telefon;
-            idClient = ++contorClient;
-        }
-        #endregion
+        //#region Constructori
+        //public Client(int id, string nume, string prenume, DateTime dataNastere, string email, string telefon)
+        //{
+        //    Nume = nume;
+        //    Prenume = prenume;
+        //    DataNastere = dataNastere;
+        //    Email = email;
+        //    Telefon = telefon;
+        //    IdClient = id;
+        //}
+        //#endregion
 
-        #region metode IComparable, IClonable
-        public int CompareTo(Client other)
-        {
-            return this.Email.CompareTo(other.Email);
-        }
+        //#region metode IComparable, IClonable
+        //public int CompareTo(Client other)
+        //{
+        //    return this.Email.CompareTo(other.Email);
+        //}
 
-        public object Clone()
-        {
-            var clone = new Client(this.Nume, this.Prenume, this.DataNastere,this.Email,this.Telefon);
-            return clone;
-        }
-        #endregion
+        //public object Clone()
+        //{
+        //    var clone = new Client((-1)*this.IdClient,this.Nume, this.Prenume, this.DataNastere,this.Email,this.Telefon);
+        //    return clone;
+        //}
+        //#endregion
     }
 }
