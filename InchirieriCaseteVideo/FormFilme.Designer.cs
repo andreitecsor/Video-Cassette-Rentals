@@ -82,6 +82,7 @@
             this.ștergeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.clientiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             btnBack = new System.Windows.Forms.Button();
             btnModifica = new System.Windows.Forms.Button();
             btnStergeFilm = new System.Windows.Forms.Button();
@@ -442,7 +443,8 @@
             this.menuStrip.BackColor = System.Drawing.Color.Transparent;
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MeniuTSMI,
-            this.fișierTSMI});
+            this.fișierTSMI,
+            this.clientiToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(800, 24);
@@ -597,6 +599,13 @@
             this.StatusLabel.Size = new System.Drawing.Size(108, 17);
             this.StatusLabel.Text = "Detalii numar filme";
             // 
+            // clientiToolStripMenuItem
+            // 
+            this.clientiToolStripMenuItem.Name = "clientiToolStripMenuItem";
+            this.clientiToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.clientiToolStripMenuItem.Text = "Clienți";
+            this.clientiToolStripMenuItem.Click += new System.EventHandler(this.clientiToolStripMenuItem_Click);
+            // 
             // FormFilme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -683,6 +692,7 @@
         private System.Windows.Forms.ToolStripMenuItem exportXmlTSMI;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel StatusLabel;
+        private System.Windows.Forms.ToolStripMenuItem clientiToolStripMenuItem;
     }
 }
 

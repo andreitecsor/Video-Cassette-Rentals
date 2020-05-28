@@ -28,6 +28,7 @@ namespace InchirieriCaseteVideo.DBContext
         }
 
         public DbSet<Client> Clienti { get; set; }
+        public DbSet<Inchiriere> Inchierieri { get; set; }
 
     } 
 }

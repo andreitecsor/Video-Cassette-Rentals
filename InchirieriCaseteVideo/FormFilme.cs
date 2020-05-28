@@ -273,6 +273,13 @@ namespace InchirieriCaseteVideo
         {
             this.Close();
         }
+        private void clientiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormClienti formClienti = new FormClienti();
+            this.Hide();
+            formClienti.ShowDialog();
+            this.Close();
+        }
 
 
         #endregion
@@ -444,8 +451,9 @@ namespace InchirieriCaseteVideo
             }
         }
 
+
         #endregion
 
-       
+        
     }
 }

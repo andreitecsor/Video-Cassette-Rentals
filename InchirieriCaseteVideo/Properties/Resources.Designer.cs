@@ -103,6 +103,16 @@ namespace InchirieriCaseteVideo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rsz_cancel {
+            get {
+                object obj = ResourceManager.GetObject("rsz_cancel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap rsz_clean {
             get {
                 object obj = ResourceManager.GetObject("rsz_clean", resourceCulture);
@@ -173,6 +183,16 @@ namespace InchirieriCaseteVideo.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rsz_next {
+            get {
+                object obj = ResourceManager.GetObject("rsz_next", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap rsz_robot {
             get {
                 object obj = ResourceManager.GetObject("rsz_robot", resourceCulture);
@@ -196,6 +216,16 @@ namespace InchirieriCaseteVideo.Properties {
         internal static System.Drawing.Bitmap rsz_undo {
             get {
                 object obj = ResourceManager.GetObject("rsz_undo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rsz2_filme {
+            get {
+                object obj = ResourceManager.GetObject("rsz2_filme", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

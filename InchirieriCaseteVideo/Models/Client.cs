@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace InchirieriCaseteVideo.Models
 {
     [Serializable]
-    public class Client//: IComparable<Client>
+    public class Client: IComparable<Client>, ICloneable
     {
         #region Atribute si Proprietati Client
         [Key]
@@ -24,33 +24,36 @@ namespace InchirieriCaseteVideo.Models
 
         public string Telefon { get; set; }
 
-        //public List<Film> filmeInchiriate;
 
         #endregion
 
-        //#region Constructori
-        //public Client(int id, string nume, string prenume, DateTime dataNastere, string email, string telefon)
-        //{
-        //    Nume = nume;
-        //    Prenume = prenume;
-        //    DataNastere = dataNastere;
-        //    Email = email;
-        //    Telefon = telefon;
-        //    IdClient = id;
-        //}
-        //#endregion
+        #region Constructori
+        public Client()
+        {
 
-        //#region metode IComparable, IClonable
-        //public int CompareTo(Client other)
-        //{
-        //    return this.Email.CompareTo(other.Email);
-        //}
+        }
 
-        //public object Clone()
-        //{
-        //    var clone = new Client((-1)*this.IdClient,this.Nume, this.Prenume, this.DataNastere,this.Email,this.Telefon);
-        //    return clone;
-        //}
-        //#endregion
+        public Client(string nume, string prenume, DateTime dataNastere, string email, string telefon)
+        {
+            Nume = nume;
+            Prenume = prenume;
+            DataNastere = dataNastere;
+            Email = email;
+            Telefon = telefon;
+        }
+        #endregion
+
+        #region metode IComparable, IClonable
+        public int CompareTo(Client other)
+        {
+            return this.Email.CompareTo(other.Email);
+        }
+
+        public object Clone()
+        {
+            var clone = new Client(this.Nume, this.Prenume, this.DataNastere, this.Email, this.Telefon);
+            return clone;
+        }
+        #endregion
     }
 }
