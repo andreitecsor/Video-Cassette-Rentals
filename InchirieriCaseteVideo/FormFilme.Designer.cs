@@ -77,12 +77,14 @@
             this.exportTextTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.exportBinarTSMI = new System.Windows.Forms.ToolStripMenuItem();
             this.exportXmlTSMI = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsListView = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.modificăToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ștergeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.clientiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importListaFilmeOficialaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportListaFilmeOficialaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             btnBack = new System.Windows.Forms.Button();
             btnModifica = new System.Windows.Forms.Button();
             btnStergeFilm = new System.Windows.Forms.Button();
@@ -444,7 +446,9 @@
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MeniuTSMI,
             this.fișierTSMI,
-            this.clientiToolStripMenuItem});
+            this.clientiToolStripMenuItem,
+            this.importListaFilmeOficialaToolStripMenuItem,
+            this.exportListaFilmeOficialaToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(800, 24);
@@ -561,6 +565,13 @@
             this.exportXmlTSMI.Text = "XML";
             this.exportXmlTSMI.Click += new System.EventHandler(this.exportXmlTSMI_Click);
             // 
+            // clientiToolStripMenuItem
+            // 
+            this.clientiToolStripMenuItem.Name = "clientiToolStripMenuItem";
+            this.clientiToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.clientiToolStripMenuItem.Text = "Clienți";
+            this.clientiToolStripMenuItem.Click += new System.EventHandler(this.clientiToolStripMenuItem_Click);
+            // 
             // cmsListView
             // 
             this.cmsListView.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -599,12 +610,19 @@
             this.StatusLabel.Size = new System.Drawing.Size(108, 17);
             this.StatusLabel.Text = "Detalii numar filme";
             // 
-            // clientiToolStripMenuItem
+            // importListaFilmeOficialaToolStripMenuItem
             // 
-            this.clientiToolStripMenuItem.Name = "clientiToolStripMenuItem";
-            this.clientiToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.clientiToolStripMenuItem.Text = "Clienți";
-            this.clientiToolStripMenuItem.Click += new System.EventHandler(this.clientiToolStripMenuItem_Click);
+            this.importListaFilmeOficialaToolStripMenuItem.Name = "importListaFilmeOficialaToolStripMenuItem";
+            this.importListaFilmeOficialaToolStripMenuItem.Size = new System.Drawing.Size(150, 20);
+            this.importListaFilmeOficialaToolStripMenuItem.Text = "Import lista filme oficiala";
+            this.importListaFilmeOficialaToolStripMenuItem.Click += new System.EventHandler(this.importListaFilmeOficialaToolStripMenuItem_Click);
+            // 
+            // exportListaFilmeOficialaToolStripMenuItem
+            // 
+            this.exportListaFilmeOficialaToolStripMenuItem.Name = "exportListaFilmeOficialaToolStripMenuItem";
+            this.exportListaFilmeOficialaToolStripMenuItem.Size = new System.Drawing.Size(148, 20);
+            this.exportListaFilmeOficialaToolStripMenuItem.Text = "Export lista filme oficiala";
+            this.exportListaFilmeOficialaToolStripMenuItem.Click += new System.EventHandler(this.exportListaFilmeOficialaToolStripMenuItem_Click);
             // 
             // FormFilme
             // 
@@ -693,6 +711,8 @@
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel StatusLabel;
         private System.Windows.Forms.ToolStripMenuItem clientiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importListaFilmeOficialaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportListaFilmeOficialaToolStripMenuItem;
     }
 }
 

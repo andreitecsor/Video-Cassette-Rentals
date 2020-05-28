@@ -8,7 +8,8 @@ namespace InchirieriCaseteVideo.Models
 {
     public class Inchiriere: Tranzactie
     {
-        public List<Film> filmeInchiriate { get; set; }
+        public List<FilmInchiriat> filmeInchiriate { get; set; }
         public DateTime sfarsitPerioada { get; set; }
+
     }
 }

@@ -13,15 +13,10 @@ namespace InchirieriCaseteVideo.Models
         #region Atribute si Proprietati Client
         [Key]
         public int IdClient { get; set; } // primary key
-
         public string Nume { get; set; }
-
         public string Prenume { get; set; }
-
         public DateTime DataNastere { get; set; }
-
         public string Email { get; set; }
-
         public string Telefon { get; set; }
 
 

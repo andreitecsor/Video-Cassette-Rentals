@@ -218,6 +218,22 @@ namespace InchirieriCaseteVideo
             this.Close();
         }
 
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if (dgvClienti.SelectedRows.Count != 0)
+            {
+                Client client = clientBindingSource.Current as Client;
+                FormInchirieri formInchirieri = new FormInchirieri(client);
+                this.Hide();
+                formInchirieri.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Selectati un client pentru a continua!", "Eroare selectare client", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         #endregion Butoane Formular Clienti
 
         #region Metode auxiliare
@@ -232,12 +248,10 @@ namespace InchirieriCaseteVideo
             tbTelefon.Clear();
             tbEmail.Clear();
             dtpDataNastere.Value = new DateTime(2002, 01, 01);
-
         }
-
-
         #endregion Metode auxiliare
 
+        #region TOOL STRIP
         private void OpenFormFilme_Click(object sender, EventArgs e)
         {
             FormFilme formFilme = new FormFilme();
@@ -245,5 +259,8 @@ namespace InchirieriCaseteVideo
             formFilme.ShowDialog();
             this.Close();
         }
+        #endregion TOOL STRIP
+
+
     }
 }

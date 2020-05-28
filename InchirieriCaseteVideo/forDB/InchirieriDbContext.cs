@@ -24,7 +24,7 @@ namespace InchirieriCaseteVideo.DBContext
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=InchirieriCaseteVideo.db");
+            optionsBuilder.UseSqlite("Data Source=InchirieriCaseteVideoDB.db");
         }
 
         public DbSet<Client> Clienti { get; set; }

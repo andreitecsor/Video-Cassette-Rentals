@@ -233,7 +233,7 @@ namespace InchirieriCaseteVideo
 
         #endregion
 
-        #region Metode auxiliare (curata campuri si populeazaListView)
+        #region Metode auxiliare (curata campuri si populeazaListView + STATUS STRIP)
         private void CurataCampuri()
         {
             tbTitlu.Clear();
@@ -242,6 +242,7 @@ namespace InchirieriCaseteVideo
             tbPret.Clear();
             tbStoc.Clear();
         }
+        //AICI ESTE SI STATUS STRIP
         private void populeazaListView()
         {
             //Curatare list view
@@ -254,6 +255,7 @@ namespace InchirieriCaseteVideo
                 //Inserare in listview
                 lvFilme.Items.Add(elementLV);
             }
+            //STATUS STRIP
             StatusLabel.Text = "Filme: " + listaFilme.Count;
         }
 
@@ -452,8 +454,26 @@ namespace InchirieriCaseteVideo
         }
 
 
+
         #endregion
 
-        
+        //Cu acest fisier lucrez si la formularul de clienti:
+        private void importListaFilmeOficialaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
+            FileStream fs = File.OpenRead("filme.bin");
+            listaFilme = binaryFormatter.Deserialize(fs) as List<Film>;
+            fs.Close();        
+            populeazaListView();
+        }
+
+        private void exportListaFilmeOficialaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
+            FileStream stream = new FileStream("filme.bin", FileMode.Create);
+            binaryFormatter.Serialize(stream, listaFilme);
+            stream.Close();
+            MessageBox.Show("Export realizat cu succes!");
+        }
     }
 }

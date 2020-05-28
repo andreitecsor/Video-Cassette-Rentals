@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 
 namespace InchirieriCaseteVideo.Models
 {
-    public abstract class Tranzactie
+    public class FilmInchiriat
     {
         [Key]
-        public int CodTranzactie { get; set; }
-        public int idClient { get; set; }
-        public DateTime dataTranzactie { get; set; }
+        public int Id { get; set; }
+        public string Titlu { get; set; }
     }
 }

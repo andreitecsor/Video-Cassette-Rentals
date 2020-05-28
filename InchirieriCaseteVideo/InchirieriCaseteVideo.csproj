@@ -189,15 +189,16 @@
     <Compile Include="FormStart.Designer.cs">
       <DependentUpon>FormStart.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20200527180650_ClientiMigration.cs" />
-    <Compile Include="Migrations\20200527180650_ClientiMigration.designer.cs">
-      <DependentUpon>20200527180650_ClientiMigration.cs</DependentUpon>
+    <Compile Include="Migrations\20200528203107_InitialMigration.cs" />
+    <Compile Include="Migrations\20200528203107_InitialMigration.designer.cs">
+      <DependentUpon>20200528203107_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\InchirieriDbContextModelSnapshot.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\CustomExceptions\CustomExceptionStoc.cs" />
     <Compile Include="Models\EnumGenFilm.cs" />
     <Compile Include="Models\Film.cs" />
+    <Compile Include="Models\FilmInchiriat.cs" />
     <Compile Include="Models\IEcranizare.cs" />
     <Compile Include="Models\Inchiriere.cs" />
     <Compile Include="Models\Tranzactie.cs" />
@@ -293,6 +294,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\rsz_next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_done.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_1done.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\SQLitePCLRaw.lib.e_sqlite3.2.0.2\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets" Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.2.0.2\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets')" />

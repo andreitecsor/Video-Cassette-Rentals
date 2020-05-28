@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,7 @@ namespace InchirieriCaseteVideo.Models
     public class Film: IEcranizare, ICloneable, IComparable<Film>
     {
         #region Atribute si Proprietati Film
+        [Key]
         public int IdFilm { get; set; }
         private static int contorFilm = 1;
 
@@ -95,6 +97,7 @@ namespace InchirieriCaseteVideo.Models
         public object Clone()
         {
             var clone = new Film();
+            clone.IdFilm = this.IdFilm;
             clone.Titlu = this.Titlu;
             clone.PretPeZi = this.PretPeZi;
             clone.AnAparitie = this.AnAparitie;
