@@ -67,7 +67,8 @@ namespace InchirieriCaseteVideo
 
             if (esteValid)
             {
-                Film filmNou = new Film(titlu, pret, an, gen, stoc);
+                int id = listaFilme.Count + 1;
+                Film filmNou = new Film(id, titlu, pret, an, gen, stoc);
                 //Adaugare film nou in lista
                 listaFilme.Add(filmNou);
 
@@ -110,6 +111,7 @@ namespace InchirieriCaseteVideo
             if (lvFilme.SelectedItems.Count != 0)
             {
                 Film film = listaFilme.ElementAt(lvFilme.SelectedIndices[0]);
+                //In formul de aici avem si CLIPBOARD
                 FormEditareFilm editare = new FormEditareFilm(film);
                 editare.ShowDialog();
                 populeazaListView();
@@ -444,7 +446,7 @@ namespace InchirieriCaseteVideo
                     int.TryParse(elemente[3], out int an);
                     double.TryParse(elemente[4], out double pret);
                     int.TryParse(elemente[5], out int stoc);
-                    Film filmNou = new Film(titlu, pret, an, gen, stoc);
+                    Film filmNou = new Film(id,titlu, pret, an, gen, stoc);
                     filmNou.IdFilm = id;
                     listaFilme.Add(filmNou);
                                                                          }

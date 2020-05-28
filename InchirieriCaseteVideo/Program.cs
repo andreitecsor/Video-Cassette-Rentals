@@ -16,7 +16,7 @@ namespace InchirieriCaseteVideo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormClienti());
+            Application.Run(new FormFilme());
         }
     }
 }

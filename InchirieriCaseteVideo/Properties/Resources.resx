@@ -121,20 +121,23 @@
   <data name="rsz_delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rsz_clean" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rsz_clean.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rsz_1robot" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rsz_1robot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="rsz_clienti" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_clienti.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rsz_done" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rsz_done.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rsz_filme" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_filme.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rsz_robot" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_robot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rsz_edit3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rsz_edit3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rsz_1robot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rsz_1robot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rsz_cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,11 +163,11 @@
   <data name="rsz_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rsz_edit3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rsz_edit3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="rsz_clean" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rsz_clean.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rsz_done" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rsz_done.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="rsz_1done" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rsz_1done.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rsz_add2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_add2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,7 +175,7 @@
   <data name="rsz_edit2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rsz_edit2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rsz_1done" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rsz_1done.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="rsz_stats" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rsz_stats.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

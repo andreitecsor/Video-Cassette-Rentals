@@ -21,8 +21,7 @@ namespace InchirieriCaseteVideo
             cbGenFilm.DataSource = Enum.GetValues(typeof(EnumGenFilm));
             cbGenFilm.SelectedIndex = -1;
             _instance = film;
-            aux = (Film)film.Clone();
-            
+            Clipboard.SetData(DataFormats.Serializable, film);
         }
 
         private void FormEditareFilm_Load(object sender, EventArgs e)
@@ -100,6 +99,7 @@ namespace InchirieriCaseteVideo
                 MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
+                aux = Clipboard.GetData(DataFormats.Serializable) as Film;
                 tbTitlu.Text = aux.Titlu;
                 cbGenFilm.Text = aux.GenFilm.ToString();
                 tbAnAparitie.Text = aux.AnAparitie.ToString();
