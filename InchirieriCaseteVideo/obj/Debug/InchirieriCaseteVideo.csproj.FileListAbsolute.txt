@@ -176,3 +176,6 @@ C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW
 C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW\Proiect PAW\PAW-project\InchirieriCaseteVideo\obj\Debug\InchirieriCaseteVideo.exe
 C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW\Proiect PAW\PAW-project\InchirieriCaseteVideo\obj\Debug\InchirieriCaseteVideo.pdb
 C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW\Proiect PAW\PAW-project\InchirieriCaseteVideo\obj\Debug\InchirieriCaseteVideo.csprojAssemblyReference.cache
+C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW\Proiect PAW\PAW-project\InchirieriCaseteVideo\bin\Debug\AgeStatsChartLibrary.dll
+C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW\Proiect PAW\PAW-project\InchirieriCaseteVideo\bin\Debug\AgeStatsChartLibrary.pdb
+C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW\Proiect PAW\PAW-project\InchirieriCaseteVideo\obj\Debug\InchirieriCaseteVideo.FormStatVarste.resources

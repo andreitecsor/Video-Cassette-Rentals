@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.1062
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InchirieriCaseteVideo", "InchirieriCaseteVideo\InchirieriCaseteVideo.csproj", "{03623210-4546-4D3B-98A8-6981D61B91CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgeStatsChartLibrary", "AgeStatsChartLibrary\AgeStatsChartLibrary.csproj", "{90D6CF43-06F8-4131-95B3-9B9D6D28F371}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{03623210-4546-4D3B-98A8-6981D61B91CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03623210-4546-4D3B-98A8-6981D61B91CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03623210-4546-4D3B-98A8-6981D61B91CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90D6CF43-06F8-4131-95B3-9B9D6D28F371}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90D6CF43-06F8-4131-95B3-9B9D6D28F371}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90D6CF43-06F8-4131-95B3-9B9D6D28F371}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90D6CF43-06F8-4131-95B3-9B9D6D28F371}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

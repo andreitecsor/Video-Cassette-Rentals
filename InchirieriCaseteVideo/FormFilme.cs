@@ -271,7 +271,7 @@ namespace InchirieriCaseteVideo
         }
         private void versiuneToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Versiunea: 1.0 \nUltima actualizare: 18/04/2020", "Versiune", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Versiune Finală \nUltima actualizare: 29/05/2020", "Versiune", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         private void ieșireToolStripMenuItem_Click(object sender, EventArgs e)
         {

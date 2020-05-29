@@ -1,0 +1,8 @@
+C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW\Proiect PAW\PAW-project\AgeStatsChartLibrary\bin\Debug\AgeStatsChartLibrary.dll
+C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW\Proiect PAW\PAW-project\AgeStatsChartLibrary\bin\Debug\AgeStatsChartLibrary.pdb
+C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW\Proiect PAW\PAW-project\AgeStatsChartLibrary\obj\Debug\AgeStatsChartLibrary.csprojAssemblyReference.cache
+C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW\Proiect PAW\PAW-project\AgeStatsChartLibrary\obj\Debug\AgeStatsChartLibrary.AgeStatsChart.resources
+C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW\Proiect PAW\PAW-project\AgeStatsChartLibrary\obj\Debug\AgeStatsChartLibrary.csproj.GenerateResource.cache
+C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW\Proiect PAW\PAW-project\AgeStatsChartLibrary\obj\Debug\AgeStatsChartLibrary.csproj.CoreCompileInputs.cache
+C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW\Proiect PAW\PAW-project\AgeStatsChartLibrary\obj\Debug\AgeStatsChartLibrary.dll
+C:\Users\andre\Documents\1Programming Workspace\Visual Studio 2017 Workspace\PAW\Proiect PAW\PAW-project\AgeStatsChartLibrary\obj\Debug\AgeStatsChartLibrary.pdb

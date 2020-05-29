@@ -33,6 +33,9 @@
             System.Windows.Forms.Button btnEditeaza;
             System.Windows.Forms.Button btnSterge;
             this.gbUtilizator = new System.Windows.Forms.GroupBox();
+            this.btnAnuleaza = new System.Windows.Forms.Button();
+            this.btnModifica = new System.Windows.Forms.Button();
+            this.btnAdauga = new System.Windows.Forms.Button();
             this.tbTelefon = new System.Windows.Forms.TextBox();
             this.lbTelefon = new System.Windows.Forms.Label();
             this.lbDataNastere = new System.Windows.Forms.Label();
@@ -44,17 +47,11 @@
             this.lbPrenume = new System.Windows.Forms.Label();
             this.lbNume = new System.Windows.Forms.Label();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.dgvClienti = new System.Windows.Forms.DataGridView();
-            this.lbClienti = new System.Windows.Forms.Label();
-            this.gpEditareClient = new System.Windows.Forms.GroupBox();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnNext = new System.Windows.Forms.Button();
             this.OpenFormFilme = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.btnAnuleaza = new System.Windows.Forms.Button();
-            this.btnModifica = new System.Windows.Forms.Button();
-            this.btnAdauga = new System.Windows.Forms.Button();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.dgvClienti = new System.Windows.Forms.DataGridView();
             this.idClientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prenumeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,15 +59,75 @@
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lbClienti = new System.Windows.Forms.Label();
+            this.gpEditareClient = new System.Windows.Forms.GroupBox();
+            this.btnNext = new System.Windows.Forms.Button();
             btnBack = new System.Windows.Forms.Button();
             btnEditeaza = new System.Windows.Forms.Button();
             btnSterge = new System.Windows.Forms.Button();
             this.gbUtilizator.SuspendLayout();
             this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClienti)).BeginInit();
-            this.gpEditareClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
+            this.gpEditareClient.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // btnBack
+            // 
+            btnBack.AccessibleDescription = "Curata formular";
+            btnBack.BackColor = System.Drawing.Color.Transparent;
+            btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnBack.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            btnBack.FlatAppearance.BorderSize = 2;
+            btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnBack.ForeColor = System.Drawing.Color.Black;
+            btnBack.Image = global::InchirieriCaseteVideo.Properties.Resources.rsz_back;
+            btnBack.Location = new System.Drawing.Point(307, 314);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new System.Drawing.Size(146, 82);
+            btnBack.TabIndex = 20;
+            btnBack.UseVisualStyleBackColor = false;
+            btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnEditeaza
+            // 
+            btnEditeaza.AccessibleDescription = "Curata formular";
+            btnEditeaza.BackColor = System.Drawing.Color.Transparent;
+            btnEditeaza.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnEditeaza.FlatAppearance.BorderColor = System.Drawing.Color.Goldenrod;
+            btnEditeaza.FlatAppearance.BorderSize = 2;
+            btnEditeaza.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            btnEditeaza.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            btnEditeaza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnEditeaza.ForeColor = System.Drawing.Color.Gold;
+            btnEditeaza.Image = global::InchirieriCaseteVideo.Properties.Resources.rsz_edit3;
+            btnEditeaza.Location = new System.Drawing.Point(6, 18);
+            btnEditeaza.Name = "btnEditeaza";
+            btnEditeaza.Size = new System.Drawing.Size(159, 82);
+            btnEditeaza.TabIndex = 14;
+            btnEditeaza.UseVisualStyleBackColor = false;
+            btnEditeaza.Click += new System.EventHandler(this.btnEditeaza_Click);
+            // 
+            // btnSterge
+            // 
+            btnSterge.AccessibleDescription = "Curata formular";
+            btnSterge.BackColor = System.Drawing.Color.Transparent;
+            btnSterge.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnSterge.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            btnSterge.FlatAppearance.BorderSize = 2;
+            btnSterge.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            btnSterge.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            btnSterge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSterge.ForeColor = System.Drawing.Color.Maroon;
+            btnSterge.Image = global::InchirieriCaseteVideo.Properties.Resources.rsz_delete;
+            btnSterge.Location = new System.Drawing.Point(171, 18);
+            btnSterge.Name = "btnSterge";
+            btnSterge.Size = new System.Drawing.Size(159, 82);
+            btnSterge.TabIndex = 10;
+            btnSterge.UseVisualStyleBackColor = false;
+            btnSterge.Click += new System.EventHandler(this.btnSterge_Click);
             // 
             // gbUtilizator
             // 
@@ -94,6 +151,54 @@
             this.gbUtilizator.TabIndex = 3;
             this.gbUtilizator.TabStop = false;
             this.gbUtilizator.Text = "Detalii utilizator";
+            // 
+            // btnAnuleaza
+            // 
+            this.btnAnuleaza.BackColor = System.Drawing.Color.Transparent;
+            this.btnAnuleaza.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnAnuleaza.FlatAppearance.BorderSize = 2;
+            this.btnAnuleaza.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnAnuleaza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnuleaza.ForeColor = System.Drawing.Color.Red;
+            this.btnAnuleaza.Image = global::InchirieriCaseteVideo.Properties.Resources.rsz_cancel;
+            this.btnAnuleaza.Location = new System.Drawing.Point(16, 286);
+            this.btnAnuleaza.Name = "btnAnuleaza";
+            this.btnAnuleaza.Size = new System.Drawing.Size(98, 82);
+            this.btnAnuleaza.TabIndex = 23;
+            this.btnAnuleaza.UseVisualStyleBackColor = false;
+            this.btnAnuleaza.Click += new System.EventHandler(this.btnAnuleaza_Click);
+            // 
+            // btnModifica
+            // 
+            this.btnModifica.BackColor = System.Drawing.Color.Transparent;
+            this.btnModifica.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnModifica.FlatAppearance.BorderSize = 2;
+            this.btnModifica.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnModifica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModifica.ForeColor = System.Drawing.Color.Teal;
+            this.btnModifica.Image = global::InchirieriCaseteVideo.Properties.Resources.rsz_save;
+            this.btnModifica.Location = new System.Drawing.Point(129, 286);
+            this.btnModifica.Name = "btnModifica";
+            this.btnModifica.Size = new System.Drawing.Size(137, 82);
+            this.btnModifica.TabIndex = 22;
+            this.btnModifica.UseVisualStyleBackColor = false;
+            this.btnModifica.Click += new System.EventHandler(this.btnModifica_Click);
+            // 
+            // btnAdauga
+            // 
+            this.btnAdauga.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdauga.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnAdauga.FlatAppearance.BorderSize = 2;
+            this.btnAdauga.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnAdauga.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdauga.ForeColor = System.Drawing.Color.Teal;
+            this.btnAdauga.Image = global::InchirieriCaseteVideo.Properties.Resources.rsz_add2;
+            this.btnAdauga.Location = new System.Drawing.Point(16, 286);
+            this.btnAdauga.Name = "btnAdauga";
+            this.btnAdauga.Size = new System.Drawing.Size(250, 82);
+            this.btnAdauga.TabIndex = 21;
+            this.btnAdauga.UseVisualStyleBackColor = false;
+            this.btnAdauga.Click += new System.EventHandler(this.btnAdauga_Click);
             // 
             // tbTelefon
             // 
@@ -191,10 +296,35 @@
             this.toolStrip.TabIndex = 4;
             this.toolStrip.Text = "toolStrip1";
             // 
+            // OpenFormFilme
+            // 
+            this.OpenFormFilme.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.OpenFormFilme.Image = global::InchirieriCaseteVideo.Properties.Resources.rsz2_filme;
+            this.OpenFormFilme.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.OpenFormFilme.Name = "OpenFormFilme";
+            this.OpenFormFilme.Size = new System.Drawing.Size(23, 22);
+            this.OpenFormFilme.Text = "toolStripButton1";
+            this.OpenFormFilme.Click += new System.EventHandler(this.OpenFormFilme_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::InchirieriCaseteVideo.Properties.Resources.rsz_stats;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // dgvClienti
             // 
@@ -215,172 +345,6 @@
             this.dgvClienti.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClienti.Size = new System.Drawing.Size(644, 240);
             this.dgvClienti.TabIndex = 5;
-            // 
-            // lbClienti
-            // 
-            this.lbClienti.AutoSize = true;
-            this.lbClienti.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lbClienti.Location = new System.Drawing.Point(303, 28);
-            this.lbClienti.Name = "lbClienti";
-            this.lbClienti.Size = new System.Drawing.Size(52, 20);
-            this.lbClienti.TabIndex = 18;
-            this.lbClienti.Text = "Clienți";
-            // 
-            // gpEditareClient
-            // 
-            this.gpEditareClient.Controls.Add(btnEditeaza);
-            this.gpEditareClient.Controls.Add(btnSterge);
-            this.gpEditareClient.Location = new System.Drawing.Point(459, 296);
-            this.gpEditareClient.Name = "gpEditareClient";
-            this.gpEditareClient.Size = new System.Drawing.Size(342, 116);
-            this.gpEditareClient.TabIndex = 23;
-            this.gpEditareClient.TabStop = false;
-            this.gpEditareClient.Text = "Editare client";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btnNext
-            // 
-            this.btnNext.BackColor = System.Drawing.Color.Transparent;
-            this.btnNext.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnNext.FlatAppearance.BorderSize = 2;
-            this.btnNext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.ForeColor = System.Drawing.Color.Teal;
-            this.btnNext.Image = global::InchirieriCaseteVideo.Properties.Resources.rsz_next;
-            this.btnNext.Location = new System.Drawing.Point(814, 314);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(137, 82);
-            this.btnNext.TabIndex = 24;
-            this.btnNext.UseVisualStyleBackColor = false;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
-            // btnBack
-            // 
-            btnBack.AccessibleDescription = "Curata formular";
-            btnBack.BackColor = System.Drawing.Color.Transparent;
-            btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnBack.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            btnBack.FlatAppearance.BorderSize = 2;
-            btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnBack.ForeColor = System.Drawing.Color.Black;
-            btnBack.Image = global::InchirieriCaseteVideo.Properties.Resources.rsz_back;
-            btnBack.Location = new System.Drawing.Point(307, 314);
-            btnBack.Name = "btnBack";
-            btnBack.Size = new System.Drawing.Size(146, 82);
-            btnBack.TabIndex = 20;
-            btnBack.UseVisualStyleBackColor = false;
-            btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // btnEditeaza
-            // 
-            btnEditeaza.AccessibleDescription = "Curata formular";
-            btnEditeaza.BackColor = System.Drawing.Color.Transparent;
-            btnEditeaza.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnEditeaza.FlatAppearance.BorderColor = System.Drawing.Color.Goldenrod;
-            btnEditeaza.FlatAppearance.BorderSize = 2;
-            btnEditeaza.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            btnEditeaza.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            btnEditeaza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnEditeaza.ForeColor = System.Drawing.Color.Gold;
-            btnEditeaza.Image = global::InchirieriCaseteVideo.Properties.Resources.rsz_edit3;
-            btnEditeaza.Location = new System.Drawing.Point(6, 18);
-            btnEditeaza.Name = "btnEditeaza";
-            btnEditeaza.Size = new System.Drawing.Size(159, 82);
-            btnEditeaza.TabIndex = 14;
-            btnEditeaza.UseVisualStyleBackColor = false;
-            btnEditeaza.Click += new System.EventHandler(this.btnEditeaza_Click);
-            // 
-            // btnSterge
-            // 
-            btnSterge.AccessibleDescription = "Curata formular";
-            btnSterge.BackColor = System.Drawing.Color.Transparent;
-            btnSterge.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnSterge.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            btnSterge.FlatAppearance.BorderSize = 2;
-            btnSterge.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            btnSterge.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            btnSterge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnSterge.ForeColor = System.Drawing.Color.Maroon;
-            btnSterge.Image = global::InchirieriCaseteVideo.Properties.Resources.rsz_delete;
-            btnSterge.Location = new System.Drawing.Point(171, 18);
-            btnSterge.Name = "btnSterge";
-            btnSterge.Size = new System.Drawing.Size(159, 82);
-            btnSterge.TabIndex = 10;
-            btnSterge.UseVisualStyleBackColor = false;
-            btnSterge.Click += new System.EventHandler(this.btnSterge_Click);
-            // 
-            // OpenFormFilme
-            // 
-            this.OpenFormFilme.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.OpenFormFilme.Image = global::InchirieriCaseteVideo.Properties.Resources.rsz2_filme;
-            this.OpenFormFilme.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.OpenFormFilme.Name = "OpenFormFilme";
-            this.OpenFormFilme.Size = new System.Drawing.Size(23, 22);
-            this.OpenFormFilme.Text = "toolStripButton1";
-            this.OpenFormFilme.Click += new System.EventHandler(this.OpenFormFilme_Click);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::InchirieriCaseteVideo.Properties.Resources.rsz_stats;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
-            // 
-            // btnAnuleaza
-            // 
-            this.btnAnuleaza.BackColor = System.Drawing.Color.Transparent;
-            this.btnAnuleaza.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnAnuleaza.FlatAppearance.BorderSize = 2;
-            this.btnAnuleaza.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnAnuleaza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnuleaza.ForeColor = System.Drawing.Color.Red;
-            this.btnAnuleaza.Image = global::InchirieriCaseteVideo.Properties.Resources.rsz_cancel;
-            this.btnAnuleaza.Location = new System.Drawing.Point(16, 286);
-            this.btnAnuleaza.Name = "btnAnuleaza";
-            this.btnAnuleaza.Size = new System.Drawing.Size(98, 82);
-            this.btnAnuleaza.TabIndex = 23;
-            this.btnAnuleaza.UseVisualStyleBackColor = false;
-            this.btnAnuleaza.Click += new System.EventHandler(this.btnAnuleaza_Click);
-            // 
-            // btnModifica
-            // 
-            this.btnModifica.BackColor = System.Drawing.Color.Transparent;
-            this.btnModifica.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnModifica.FlatAppearance.BorderSize = 2;
-            this.btnModifica.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnModifica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModifica.ForeColor = System.Drawing.Color.Teal;
-            this.btnModifica.Image = global::InchirieriCaseteVideo.Properties.Resources.rsz_save;
-            this.btnModifica.Location = new System.Drawing.Point(129, 286);
-            this.btnModifica.Name = "btnModifica";
-            this.btnModifica.Size = new System.Drawing.Size(137, 82);
-            this.btnModifica.TabIndex = 22;
-            this.btnModifica.UseVisualStyleBackColor = false;
-            this.btnModifica.Click += new System.EventHandler(this.btnModifica_Click);
-            // 
-            // btnAdauga
-            // 
-            this.btnAdauga.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdauga.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnAdauga.FlatAppearance.BorderSize = 2;
-            this.btnAdauga.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnAdauga.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdauga.ForeColor = System.Drawing.Color.Teal;
-            this.btnAdauga.Image = global::InchirieriCaseteVideo.Properties.Resources.rsz_add2;
-            this.btnAdauga.Location = new System.Drawing.Point(16, 286);
-            this.btnAdauga.Name = "btnAdauga";
-            this.btnAdauga.Size = new System.Drawing.Size(250, 82);
-            this.btnAdauga.TabIndex = 21;
-            this.btnAdauga.UseVisualStyleBackColor = false;
-            this.btnAdauga.Click += new System.EventHandler(this.btnAdauga_Click);
             // 
             // idClientDataGridViewTextBoxColumn
             // 
@@ -422,6 +386,43 @@
             // 
             this.clientBindingSource.DataSource = typeof(InchirieriCaseteVideo.Models.Client);
             // 
+            // lbClienti
+            // 
+            this.lbClienti.AutoSize = true;
+            this.lbClienti.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbClienti.Location = new System.Drawing.Point(303, 28);
+            this.lbClienti.Name = "lbClienti";
+            this.lbClienti.Size = new System.Drawing.Size(52, 20);
+            this.lbClienti.TabIndex = 18;
+            this.lbClienti.Text = "Clienți";
+            // 
+            // gpEditareClient
+            // 
+            this.gpEditareClient.Controls.Add(btnEditeaza);
+            this.gpEditareClient.Controls.Add(btnSterge);
+            this.gpEditareClient.Location = new System.Drawing.Point(459, 296);
+            this.gpEditareClient.Name = "gpEditareClient";
+            this.gpEditareClient.Size = new System.Drawing.Size(342, 116);
+            this.gpEditareClient.TabIndex = 23;
+            this.gpEditareClient.TabStop = false;
+            this.gpEditareClient.Text = "Editare client";
+            // 
+            // btnNext
+            // 
+            this.btnNext.BackColor = System.Drawing.Color.Transparent;
+            this.btnNext.FlatAppearance.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnNext.FlatAppearance.BorderSize = 2;
+            this.btnNext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.ForeColor = System.Drawing.Color.Teal;
+            this.btnNext.Image = global::InchirieriCaseteVideo.Properties.Resources.rsz_next;
+            this.btnNext.Location = new System.Drawing.Point(814, 314);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(137, 82);
+            this.btnNext.TabIndex = 24;
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
             // FormClienti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -445,8 +446,8 @@
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClienti)).EndInit();
-            this.gpEditareClient.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
+            this.gpEditareClient.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -259,8 +259,13 @@ namespace InchirieriCaseteVideo
             formFilme.ShowDialog();
             this.Close();
         }
+
         #endregion TOOL STRIP
 
-
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            FormStatVarste formStatVarste = new FormStatVarste();
+            formStatVarste.Show();
+        }
     }
 }
