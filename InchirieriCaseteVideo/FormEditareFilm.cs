@@ -32,6 +32,7 @@ namespace InchirieriCaseteVideo
             tbPret.Text = _instance.PretPeZi.ToString();
             tbStoc.Text = _instance.Stoc.ToString();
         }
+
         #region Butoane
         private void btnModifica_Click(object sender, EventArgs e)
         {

@@ -315,11 +315,11 @@ namespace InchirieriCaseteVideo
         #region ALT SHORTCUTS
         private void lvFilme_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Delete)
+            if (e.KeyCode == Keys.Delete)
             {
                 btnStergeFilm_Click(sender, e);
             }
-            if(e.KeyCode == Keys.E && e.Control)
+            if (e.KeyCode == Keys.E && e.Control)
             {
                 btnModifica_Click(sender, e);
             }
@@ -344,21 +344,28 @@ namespace InchirieriCaseteVideo
                 FileStream stream = new FileStream(sfd.FileName, FileMode.Create);
                 binaryFormatter.Serialize(stream, listaFilme);
                 stream.Close();
-                MessageBox.Show("Fisierul "+ sfd.FileName+" a fost salvat cu succes");
+                MessageBox.Show("Fisierul " + sfd.FileName + " a fost salvat cu succes");
             }
-            
+
         }
         //XML - SERIALIZARE
         private void exportXmlTSMI_Click(object sender, EventArgs e)
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(List<Film>));
-            FileStream fs = File.Create("listaFilme.xml");
-            serializer.Serialize(fs, listaFilme);
-            fs.Close();
-            MessageBox.Show("Fisierul listaFilme.xml a fost salvat cu succes");
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Title = "Salvează fișier binar";
+            sfd.Filter = "Text files (*.txt)|*.txt|XML Source File (*.xml)|*.dat|All files(*.*)|*.*";
+            sfd.FilterIndex = 3;
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(List<Film>));
+                FileStream fs = new FileStream(sfd.FileName, FileMode.Create);
+                serializer.Serialize(fs, listaFilme);
+                fs.Close();
+                MessageBox.Show("Fisierul listaFilme.xml a fost salvat cu succes");
+            }
         }
 
-  
+
         //DESERIALIZARE
         //BINARY - DESERIALIZARE
         private void importBinarTSMI_Click(object sender, EventArgs e)
@@ -379,7 +386,7 @@ namespace InchirieriCaseteVideo
                 populeazaListView();
             }
         }
-        
+
         //XML - DESERIALIZARE
         private void importXmlTSMI_Click(object sender, EventArgs e)
         {
@@ -415,7 +422,7 @@ namespace InchirieriCaseteVideo
                 sw.Write("ID, Titlu, Gen, An aparitie, Pret, Stoc\n");
                 foreach (Film each in listaFilme)
                 {
-                    sw.Write(each.IdFilm + "," + each.Titlu + "," + each.GenFilm + "," + each.AnAparitie + "," 
+                    sw.Write(each.IdFilm + "," + each.Titlu + "," + each.GenFilm + "," + each.AnAparitie + ","
                         + each.PretPeZi + "," + each.Stoc + "\n");
                 }
                 sw.Close();
@@ -446,10 +453,10 @@ namespace InchirieriCaseteVideo
                     int.TryParse(elemente[3], out int an);
                     double.TryParse(elemente[4], out double pret);
                     int.TryParse(elemente[5], out int stoc);
-                    Film filmNou = new Film(id,titlu, pret, an, gen, stoc);
+                    Film filmNou = new Film(id, titlu, pret, an, gen, stoc);
                     filmNou.IdFilm = id;
                     listaFilme.Add(filmNou);
-                                                                         }
+                }
                 sr.Close();
                 populeazaListView();
             }
@@ -459,13 +466,14 @@ namespace InchirieriCaseteVideo
 
         #endregion
 
+        #region Filmele stoc
         //Cu acest fisier lucrez si la formularul de clienti:
         private void importListaFilmeOficialaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BinaryFormatter binaryFormatter = new BinaryFormatter();
             FileStream fs = File.OpenRead("filme.bin");
             listaFilme = binaryFormatter.Deserialize(fs) as List<Film>;
-            fs.Close();        
+            fs.Close();
             populeazaListView();
         }
 
@@ -477,5 +485,6 @@ namespace InchirieriCaseteVideo
             stream.Close();
             MessageBox.Show("Export realizat cu succes!");
         }
+        #endregion
     }
 }

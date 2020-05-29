@@ -19,9 +19,12 @@ namespace InchirieriCaseteVideo
     {
         //Lista care tine modificarile facute in stoc
         List<Film> listaFilmeStoc = new List<Film>();
+
         //Lista filmelor selectate pentru a fi facturate
         List<Film> listaFilmeDeVandut = new List<Film>();
+
         InchirieriDbContext context = new InchirieriDbContext();
+
         Client _client;
         Inchiriere inchiriere;
 

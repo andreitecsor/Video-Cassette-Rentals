@@ -17,6 +17,7 @@ namespace InchirieriCaseteVideo
             InitializeComponent();
         }
 
+        #region Butoane formular
         private void btnFilme_Click(object sender, EventArgs e)
         {
             FormFilme adaugaFilm = new FormFilme();
@@ -32,6 +33,7 @@ namespace InchirieriCaseteVideo
             formClienti.ShowDialog();
             this.Close();
         }
+        #endregion Butoane formular
 
         #region MenuStrip
         private void autorToolStripMenuItem_Click(object sender, EventArgs e)
