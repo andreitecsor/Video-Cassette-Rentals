@@ -65,36 +65,44 @@ namespace InchirieriCaseteVideo
             }
             else
             {
-                String[] filmeSelectate = checkedListBox.CheckedItems.Cast<string>().ToArray();
-                foreach (string titluFilm in filmeSelectate)
+                if (checkedListBox.CheckedItems.Count != 0)
                 {
-                    Film film = listaFilmeStoc.Where(i => i.Titlu == titluFilm).FirstOrDefault();
-                    Film filmDeVandut = film.Clone() as Film;
-                    film.Stoc--;
-                    listaFilmeDeVandut.Add(filmDeVandut);
-                    FilmInchiriat filmInchiriat = new FilmInchiriat()
+                    String[] filmeSelectate = checkedListBox.CheckedItems.Cast<string>().ToArray();
+                    foreach (string titluFilm in filmeSelectate)
                     {
-                        Titlu = titluFilm
-                    };
-                    filmeInchiriate.Add(filmInchiriat);
+                        Film film = listaFilmeStoc.Where(i => i.Titlu == titluFilm).FirstOrDefault();
+                        Film filmDeVandut = film.Clone() as Film;
+                        film.Stoc--;
+                        listaFilmeDeVandut.Add(filmDeVandut);
+                        FilmInchiriat filmInchiriat = new FilmInchiriat()
+                        {
+                            Titlu = titluFilm
+                        };
+                        filmeInchiriate.Add(filmInchiriat);
 
+                    }
+                    _client.IdClient *= 10;
+                    inchiriere = new Inchiriere()
+                    {
+                        dataTranzactie = DateTime.Today,
+                        idClient = _client.IdClient,
+                        filmeInchiriate = filmeInchiriate,
+                        sfarsitPerioada = dtpRetur.Value
+                    };
+                    context.Inchierieri.Add(inchiriere);
+                    context.SaveChanges();
+                    if (MessageBox.Show("Doriți să vizualizati factura?", "Print preview", MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        printPreview();
+                    }
+                    resetareFormular();
                 }
-                _client.IdClient *= 10;
-                inchiriere = new Inchiriere()
+                else
                 {
-                    dataTranzactie = DateTime.Today,
-                    idClient = _client.IdClient,
-                    filmeInchiriate = filmeInchiriate,
-                    sfarsitPerioada = dtpRetur.Value
-                };
-                context.Inchierieri.Add(inchiriere);
-                context.SaveChanges();
-                if (MessageBox.Show("Doriți să vizualizati factura?", "Print preview", MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    printPreview();
+                    MessageBox.Show("Adăugați filme în listă și bifați-le pentru validare",
+                        "Validare",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 }
-                resetareFormular();
             }
 
 
@@ -141,7 +149,7 @@ namespace InchirieriCaseteVideo
         {
             double pretTotal = 0;
             int perioada = (inchiriere.sfarsitPerioada.Date - DateTime.Today).Days;
-            foreach(Film film in lista)
+            foreach (Film film in lista)
             {
                 pretTotal += (perioada * film.PretPeZi);
             }
@@ -151,6 +159,7 @@ namespace InchirieriCaseteVideo
         public void resetareFormular()
         {
             treeView.Nodes.Clear();
+            dtpRetur.Value = DateTime.Today.Date;
             populareTreeView();
             checkedListBox.Items.Clear();
             exportFilmeBinar();
@@ -260,7 +269,7 @@ namespace InchirieriCaseteVideo
             graphics.DrawRectangle(pen, x, y, 2 * cellWidth, cellHeight);
             graphics.DrawRectangle(pen, x + 2 * cellWidth, y, cellWidth, cellHeight);
             graphics.DrawString("Dată retur:", fontTitlu, brush, x, y);
-            graphics.DrawString(dtpRetur.Value.Date.ToString().Substring(0,10), font, brush, x + 2 * cellWidth, y);
+            graphics.DrawString(dtpRetur.Value.Date.ToString().Substring(0, 10), font, brush, x + 2 * cellWidth, y);
             y += cellHeight + 15;
             graphics.DrawRectangle(pen, x, y, 2 * cellWidth, cellHeight);
             graphics.DrawRectangle(pen, x + 2 * cellWidth, y, cellWidth, cellHeight);
